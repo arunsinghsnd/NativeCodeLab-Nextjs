@@ -23,7 +23,7 @@ module.exports = () => {
         // Add this file to `fileObj`
         fileObj[`/${cleanFileName}`] = {
           page: `/${cleanFileName}`,
-          lastModified: fileStat.mtime
+          lastModified: fileStat.mtime,
         };
       }
     });
@@ -34,4 +34,3 @@ module.exports = () => {
 
   return fileObj;
 };
-
