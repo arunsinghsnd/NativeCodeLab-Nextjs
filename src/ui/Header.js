@@ -159,19 +159,19 @@ const Header = props => {
       name: "Custom Software Development",
       link: "/customsoftware",
       activeIndex: 1,
-      selectedIndex: 1,
+      selectedIndex: 0,
     },
     {
       name: "Android/iOS App Development",
       link: "/mobileapps",
       activeIndex: 1,
-      selectedIndex: 2,
+      selectedIndex: 1,
     },
     {
       name: "Website Development",
       link: "/websites",
       activeIndex: 1,
-      selectedIndex: 3,
+      selectedIndex: 2,
     },
   ];
 
@@ -229,7 +229,7 @@ const Header = props => {
             key={`${route}${index}`}
             className={classes.tab}
             component={Link}
-            to={route.link}
+            href={route.link}
             label={route.name}
             aria-owns={route.ariaOwns}
             aria-haspopup={route.ariaPopup}
@@ -240,7 +240,7 @@ const Header = props => {
       <Button
         className={classes.button}
         component={Link}
-        to="/estimate"
+        href="/estimate"
         variant="contained"
         color="secondary"
         onClick={() => props.setValue(5)}
@@ -262,7 +262,7 @@ const Header = props => {
           <MenuItem
             key={`${option}${index}`}
             component={Link}
-            to={option.link}
+            href={option.link}
             classes={{ root: classes.menuItem }}
             selected={index === props.selectedIndex && props.value === 1}
             onClick={event => {
@@ -300,7 +300,7 @@ const Header = props => {
               divider
               button
               component={Link}
-              to={route.link}
+              href={route.link}
               selected={props.value === route.selectedIndex}
               onClick={() => {
                 setOpenDrawer();
@@ -321,7 +321,7 @@ const Header = props => {
             divider
             button
             component={Link}
-            to="/estimate"
+            href="/estimate"
             selected={props.value === 5}
             classes={{
               root: classes.drawerItemEstimate,
@@ -351,7 +351,7 @@ const Header = props => {
           <Toolbar disableGutters>
             <Button
               component={Link}
-              to="/"
+              href="/"
               onClick={() => props.setValue(0)}
               className={classes.logoContainer}
               disableRipple
