@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect } from "react";
 import {
   AppBar,
@@ -16,11 +17,11 @@ import {
   List,
   ListItem,
   ListItemText,
+  Hidden,
 } from "@material-ui/core";
 
-import Link from "../src/Link";
+import Link from "../Link";
 import MenuIcon from "@material-ui/icons/Menu";
-import Image from "next/image";
 
 function ElevationScroll(props) {
   const { children } = props;
@@ -205,7 +206,9 @@ const Header = props => {
           }
           break;
         case "/estimate":
-          props.setValue(5);
+          if (props.value !== 5) {
+            props.setValue(5);
+          }
           break;
         default:
           break;
@@ -353,13 +356,14 @@ const Header = props => {
               className={classes.logoContainer}
               disableRipple
             >
-              <Image
+              <img
                 className={classes.logo}
-                src="/public/assets/logo/nativeCodeLabLogoWhite.png"
+                src="/assets/logo/nativeCodeLabLogoWhite.png"
                 alt="company logo"
               />
             </Button>
-            {matches ? drawer : tabs}
+            <Hidden mdDown> {tabs}</Hidden>
+            <Hidden lgUp> {drawer}</Hidden>
           </Toolbar>
         </AppBar>
       </ElevationScroll>

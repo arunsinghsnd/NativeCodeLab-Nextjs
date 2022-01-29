@@ -3,9 +3,24 @@ import App from "next/app";
 import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";
 import Theme from "../src/ui/Theme";
-import { CssBaseline } from "@material-ui/core";
+import Header from "../src/ui/Header";
+import Footer from "../src/ui/Footer";
 
 export default class MyApp extends App {
+  constructor(props) {
+    super(props);
+
+    this.state = { value: 0, selectedIndex: 0 };
+  }
+
+  setValue = index => {
+    this.setState({ value: index });
+  };
+
+  setSelectedIndex = index => {
+    this.setState({ selectedIndex: index });
+  };
+
   componentDidMount() {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector("#jss-server-side");
@@ -23,8 +38,21 @@ export default class MyApp extends App {
           <title>My page</title>
         </Head>
         <ThemeProvider theme={Theme}>
-          <CssBaseline />
-          <Component {...pageProps} />
+          <Header
+            value={this.state.value}
+            setValue={this.setValue}
+            selectedIndex={this.state.selectedIndex}
+            setSelectedIndex={this.setSelectedIndex}
+          />
+          <Component
+            {...pageProps}
+            setSelectedIndex={this.setSelectedIndex}
+            setValue={this.setValue}
+          />
+          <Footer
+            setSelectedIndex={this.setSelectedIndex}
+            setValue={this.setValue}
+          />
         </ThemeProvider>
       </React.Fragment>
     );

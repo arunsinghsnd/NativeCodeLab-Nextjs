@@ -18,14 +18,14 @@ import Link from "../src/Link";
 
 const useStyles = makeStyles(theme => ({
   background: {
-    backgroundimg: url("/public/assets/background.jpg"),
+    backgroundImage: `url("/assets/background.jpg")`,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     height: "60em",
     paddingBottom: "10em",
     [theme.breakpoints.down("md")]: {
-      backgroundimg: url("/public/assets/mobileBackground.jpg"),
+      backgroundImage: `url("/assets/mobileBackground.jpg")`,
     },
   },
   learnButton: {
@@ -164,7 +164,7 @@ const Contact = props => {
             <Grid item container style={{ marginTop: "2em" }}>
               <Grid item>
                 <img
-                  src="/public/assets/phone.svg"
+                  src="/assets/phone.svg"
                   alt="phone icon"
                   style={{ marginRight: "0.5em" }}
                 />
@@ -187,7 +187,7 @@ const Contact = props => {
             <Grid item container style={{ marginBottom: "2em" }}>
               <Grid item>
                 <img
-                  src="/public/assets/email.svg"
+                  src="/assets/email.svg"
                   alt="envalop"
                   style={{ marginRight: "0.5em", verticalAlign: "bottom" }}
                 />
@@ -273,7 +273,7 @@ const Contact = props => {
               >
                 Send Message{" "}
                 <img
-                  src="/public/assets/send.svg"
+                  src="/assets/send.svg"
                   alt="paper airpalne"
                   style={{ marginLeft: "1em" }}
                 />
@@ -394,7 +394,7 @@ const Contact = props => {
               >
                 Send Message{" "}
                 <img
-                  src="/public/assets/send.svg"
+                  src="/assets/send.svg"
                   alt="paper airpalne"
                   style={{ marginLeft: "1em" }}
                 />

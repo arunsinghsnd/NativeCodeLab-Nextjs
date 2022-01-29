@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import Link from "../src/Link";
+import Link from "../Link";
 import { Hidden, makeStyles, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
