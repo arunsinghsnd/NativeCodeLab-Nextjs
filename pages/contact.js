@@ -171,7 +171,7 @@ const Contact = props => {
           <Grid container direction="column">
             <Grid item>
               <Typography
-                variant="h2"
+                variant="h1"
                 align={matchesMD ? "center" : undefined}
                 style={{ lineHeight: 1 }}
               >
@@ -447,7 +447,7 @@ const Contact = props => {
         >
           <Grid container direction="column">
             <Grid item>
-              <Typography align={matchesMD ? "center" : undefined} variant="h2">
+              <Typography align={matchesMD ? "center" : undefined} variant="h1">
                 Simple Software.
                 <br /> Revolutionary Results.
               </Typography>

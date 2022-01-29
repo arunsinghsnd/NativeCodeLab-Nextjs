@@ -177,7 +177,7 @@ const LandingPage = props => {
           direction="row"
         >
           <Grid sm item className={classes.heroTextContainer}>
-            <Typography variant="h2" align="center">
+            <Typography variant="h1" align="center">
               Bringing West Coast Technology
               <br />
               to the Midwest
@@ -449,7 +449,7 @@ const LandingPage = props => {
                 direction="column"
                 style={{ marginBottom: matchesXS ? "10em" : 0 }}
               >
-                <Typography variant="h2" style={{ color: "white" }}>
+                <Typography variant="h1" style={{ color: "white" }}>
                   About Us
                 </Typography>
                 <Typography variant="subtitle2">Let's get personal</Typography>
@@ -478,7 +478,7 @@ const LandingPage = props => {
               }}
             >
               <Grid container direction="column">
-                <Typography variant="h2" style={{ color: "white" }}>
+                <Typography variant="h1" style={{ color: "white" }}>
                   Contact Us
                 </Typography>
                 <Typography variant="subtitle2">

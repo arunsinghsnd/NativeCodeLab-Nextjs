@@ -29,7 +29,7 @@ export default createTheme({
       fontSize: "1rem",
       color: "white",
     },
-    h2: {
+    h1: {
       fontFamily: "Ralewaye",
       fontWeight: 700,
       fontSize: "2.5rem",

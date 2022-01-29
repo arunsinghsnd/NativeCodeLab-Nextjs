@@ -117,7 +117,7 @@ const Services = props => {
       >
         <Typography
           align={matchesSM ? "center" : undefined}
-          variant="h2"
+          variant="h1"
           gutterBottom
         >
           Services

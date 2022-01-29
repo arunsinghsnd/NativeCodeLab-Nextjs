@@ -80,7 +80,7 @@ const Revolution = props => {
       </Head>
       <Grid item className={classes.rowContainer} style={{ marginTop: "2em" }}>
         <Typography
-          variant="h2"
+          variant="h1"
           align={matchesMD ? "center" : undefined}
           style={{ fontFamily: "Pacifico" }}
         >
