@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import Lottie from "react-lottie";
@@ -93,7 +94,7 @@ const useStyle = makeStyles(theme => ({
     },
   },
   revolutionBackground: {
-    backgroundimg: `url("/public/assets/repeatingBackground.svg")`,
+    backgroundImage: `url("/assets/repeatingBackground.svg")`,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -115,7 +116,7 @@ const useStyle = makeStyles(theme => ({
     },
   },
   infoBackground: {
-    backgroundimg: `url("/public/assets/infoBackground.svg")`,
+    backgroundImage: `url("/assets/infoBackground.svg")`,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -239,7 +240,7 @@ const LandingPage = props => {
             <img
               className={classes.icon}
               alt="custom software icon"
-              src="/public/assets/customSoftware.svg"
+              src="/assets/customSoftware.svg"
             />
           </Grid>
         </Grid>
@@ -289,7 +290,7 @@ const LandingPage = props => {
             <img
               className={classes.icon}
               alt="Android/iOS App Development icon"
-              src="/public/assets/mobileIcon.svg"
+              src="/assets/mobileIcon.svg"
             />
           </Grid>
         </Grid>
@@ -339,7 +340,7 @@ const LandingPage = props => {
             <img
               className={classes.icon}
               alt="Website software icon"
-              src="/public/assets/websiteIcon.svg"
+              src="/assets/websiteIcon.svg"
             />
           </Grid>
         </Grid>
