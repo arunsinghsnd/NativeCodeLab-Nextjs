@@ -1,4 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
+
 import React from "react";
 import {
   Grid,
@@ -69,7 +71,7 @@ const Revolution = props => {
       >
         <Grid item lg>
           <img
-            src="/public/assets/vision.svg"
+            src="/assets/vision.svg"
             alt="mountain through binoculrs"
             style={{
               maxWidth: matchesSM ? 300 : "40em",
@@ -323,7 +325,7 @@ const Revolution = props => {
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
           <img
-            src="/public/assets/consultationIcon.svg"
+            src="/assets/consultationIcon.svg"
             style={{ maxWidth: 700 }}
             alt="handshake"
             width="100%"
@@ -391,7 +393,7 @@ const Revolution = props => {
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
           <img
-            src="/public/assets/mockupIcon.svg"
+            src="/assets/mockupIcon.svg"
             width="100%"
             alt="Basci website degsin outline"
             style={{ maxWidth: 1000 }}
@@ -460,7 +462,7 @@ const Revolution = props => {
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
           <img
-            src="/public/assets/reviewIcon.svg"
+            src="/assets/reviewIcon.svg"
             alt="magnifying glass"
             width="100%"
           />
@@ -517,7 +519,7 @@ const Revolution = props => {
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
           <img
-            src="/public/assets/designIcon.svg"
+            src="/assets/designIcon.svg"
             width="100%"
             alt="Basci website degsin outline"
             style={{ maxWidth: 1000 }}
@@ -574,7 +576,7 @@ const Revolution = props => {
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
           <img
-            src="/public/assets/reviewIcon.svg"
+            src="/assets/reviewIcon.svg"
             alt="Basci website degsin outline"
             width="100%"
           />
@@ -670,7 +672,7 @@ const Revolution = props => {
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
           <img
-            src="/public/assets/buildIcon.svg"
+            src="/assets/buildIcon.svg"
             alt="Basci website degsin outline"
             style={{ maxWidth: matchesMD ? 400 : 500 }}
             width="100%"
@@ -739,7 +741,7 @@ const Revolution = props => {
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
           <img
-            src="/public/assets/launchIcon.svg"
+            src="/assets/launchIcon.svg"
             width="100%"
             style={{ maxWidth: 200 }}
             alt="Basci website degsin outline"
@@ -807,7 +809,7 @@ const Revolution = props => {
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
           <img
-            src="/public/assets/maintainIcon.svg"
+            src="/assets/maintainIcon.svg"
             width="100%"
             style={{ maxWidth: 500 }}
             alt="Basci website degsin outline"
@@ -876,7 +878,7 @@ const Revolution = props => {
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
           <img
-            src="/public/assets/iterateIcon.svg"
+            src="/assets/iterateIcon.svg"
             alt="Basci website degsin outline"
             width="100%"
           />

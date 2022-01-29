@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import {
   Grid,
@@ -106,10 +107,7 @@ const CustomSoftware = props => {
                 props.setSelectedIndex(1);
               }}
             >
-              <img
-                src="/public/assets/backArrow.svg"
-                alt="Back to Services Page"
-              />
+              <img src="/assets/backArrow.svg" alt="Back to Services Page" />
             </IconButton>
           </Grid>
         </Hidden>
@@ -171,7 +169,7 @@ const CustomSoftware = props => {
               }}
             >
               <img
-                src="/public/assets/forwardArrow.svg"
+                src="/assets/forwardArrow.svg"
                 alt="Forwared to android and iOS App developemnt  page"
               />
             </IconButton>
@@ -198,7 +196,7 @@ const CustomSoftware = props => {
             <Typography variant="h4">Save Energy</Typography>
           </Grid>
           <Grid item>
-            <img alt="LightBuld" src="/public/assets/bulb.svg" />
+            <img alt="LightBuld" src="/assets/bulb.svg" />
           </Grid>
         </Grid>
         <Grid
@@ -217,7 +215,7 @@ const CustomSoftware = props => {
             <Typography variant="h4">Save Time</Typography>
           </Grid>
           <Grid item>
-            <img alt="StopWacth" src="/public/assets/stopwatch.svg" />
+            <img alt="StopWacth" src="/assets/stopwatch.svg" />
           </Grid>
         </Grid>
         <Grid
@@ -232,7 +230,7 @@ const CustomSoftware = props => {
             <Typography variant="h4">Save Money</Typography>
           </Grid>
           <Grid item>
-            <img alt="Cash" src="/public/assets/cash.svg" />
+            <img alt="Cash" src="/assets/cash.svg" />
           </Grid>
         </Grid>
       </Grid>
@@ -337,7 +335,7 @@ const CustomSoftware = props => {
         <Grid item container direction="column" alignItems="center">
           <Grid item>
             <img
-              src="/public/assets/root.svg"
+              src="/assets/root.svg"
               alt="Tree with roots extending out"
               height={matchesSM ? "300em" : "450em"}
               width={matchesSM ? "300em" : "450em"}

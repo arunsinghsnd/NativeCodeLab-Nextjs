@@ -1,4 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
+
 import React, { useState } from "react";
 import {
   Grid,
@@ -60,7 +62,7 @@ const defaultQuestions = [
         id: 1,
         title: "Custom Software Development",
         subtitle: null,
-        icon: "/public/assets/software.svg",
+        icon: "/assets/software.svg",
         iconAlt: "three floating Screens",
         selected: false,
         cost: 0,
@@ -69,7 +71,7 @@ const defaultQuestions = [
         id: 2,
         title: "Android/iOS App Development",
         subtitle: null,
-        icon: "/public/assets/mobile.svg",
+        icon: "/assets/mobile.svg",
         iconAlt: "Phone and tablet",
         selected: false,
         cost: 0,
@@ -78,7 +80,7 @@ const defaultQuestions = [
         id: 3,
         title: "Website & Web App's Development",
         subtitle: null,
-        icon: "/public/assets/website.svg",
+        icon: "/assets/website.svg",
         iconAlt: "Computer Outline",
         selected: false,
         cost: 0,
@@ -98,7 +100,7 @@ const softwareQuestions = [
         id: 1,
         title: "Web Application",
         subtitle: null,
-        icon: "/public/assets/website.svg",
+        icon: "/assets/website.svg",
         iconAlt: "computer outline",
         selected: false,
         cost: 100,
@@ -107,7 +109,7 @@ const softwareQuestions = [
         id: 2,
         title: "iOS Application",
         subtitle: null,
-        icon: "/public/assets/iphone.svg",
+        icon: "/assets/iphone.svg",
         iconAlt: "outline of iphone",
         selected: false,
         cost: 100,
@@ -116,7 +118,7 @@ const softwareQuestions = [
         id: 3,
         title: "Android Application",
         subtitle: null,
-        icon: "/public/assets/android.svg",
+        icon: "/assets/android.svg",
         iconAlt: "outlines of android phone",
         selected: false,
         cost: 100,
@@ -133,7 +135,7 @@ const softwareQuestions = [
         id: 1,
         title: "Photo/Video",
         subtitle: null,
-        icon: "/public/assets/android.svg",
+        icon: "/assets/android.svg",
         iconAlt: "camera outline",
         selected: false,
         cost: 25,
@@ -142,7 +144,7 @@ const softwareQuestions = [
         id: 2,
         title: "GPS",
         subtitle: null,
-        icon: "/public/assets/gps.svg",
+        icon: "/assets/gps.svg",
         iconAlt: "gps pin",
         selected: false,
         cost: 25,
@@ -151,7 +153,7 @@ const softwareQuestions = [
         id: 3,
         title: "File Transfer",
         subtitle: null,
-        icon: "/public/assets/upload.svg",
+        icon: "/assets/upload.svg",
         iconAlt: "outline of cloud with arrow pointing up",
         selected: false,
         cost: 25,
@@ -168,7 +170,7 @@ const softwareQuestions = [
         id: 1,
         title: "Users/Authentication",
         subtitle: null,
-        icon: "/public/assets/users.svg",
+        icon: "/assets/users.svg",
         iconAlt: "outline of a person with a plus sign",
         selected: false,
         cost: 25,
@@ -177,7 +179,7 @@ const softwareQuestions = [
         id: 2,
         title: "Biometrics",
         subtitle: null,
-        icon: "/public/assets/biometrics.svg",
+        icon: "/assets/biometrics.svg",
         iconAlt: "fingerprint",
         selected: false,
         cost: 25,
@@ -186,7 +188,7 @@ const softwareQuestions = [
         id: 3,
         title: "Push Notifications",
         subtitle: null,
-        icon: "/public/assets/bell.svg",
+        icon: "/assets/bell.svg",
         iconAlt: "outline of a bell",
         selected: false,
         cost: 25,
@@ -203,7 +205,7 @@ const softwareQuestions = [
         id: 1,
         title: "Low Complexity",
         subtitle: "(Informational)",
-        icon: "/public/assets/info.svg",
+        icon: "/assets/info.svg",
         iconAlt: "'i' inside a circle",
         selected: false,
         cost: 25,
@@ -212,7 +214,7 @@ const softwareQuestions = [
         id: 2,
         title: "Medium Complexity",
         subtitle: "(Interactive, Customizable, Realtime)",
-        icon: "/public/assets/customized.svg",
+        icon: "/assets/customized.svg",
         iconAlt: "two toggle switches",
         selected: false,
         cost: 50,
@@ -221,7 +223,7 @@ const softwareQuestions = [
         id: 3,
         title: "High Complexity",
         subtitle: "(Data Modeling and Computation)",
-        icon: "/public/assets/data.svg",
+        icon: "/assets/data.svg",
         iconAlt: "outline of line graph",
         selected: false,
         cost: 100,
@@ -238,7 +240,7 @@ const softwareQuestions = [
         id: 1,
         title: "0-10",
         subtitle: null,
-        icon: "/public/assets/person.svg",
+        icon: "/assets/person.svg",
         iconAlt: "person outline",
         selected: false,
         cost: 1,
@@ -247,7 +249,7 @@ const softwareQuestions = [
         id: 2,
         title: "10-100",
         subtitle: null,
-        icon: "/public/assets/persons.svg",
+        icon: "/assets/persons.svg",
         iconAlt: "outline of two people",
         selected: false,
         cost: 1.25,
@@ -256,7 +258,7 @@ const softwareQuestions = [
         id: 3,
         title: "100+",
         subtitle: null,
-        icon: "/public/assets/people.svg",
+        icon: "/assets/people.svg",
         iconAlt: "outline of three people",
         selected: false,
         cost: 1.5,
@@ -277,7 +279,7 @@ const websiteQuestions = [
         id: 1,
         title: "Basic",
         subtitle: "(Informational)",
-        icon: "/public/assets/info.svg",
+        icon: "/assets/info.svg",
         iconAlt: "person outline",
         selected: false,
         cost: 100,
@@ -286,7 +288,7 @@ const websiteQuestions = [
         id: 2,
         title: "Interactive",
         subtitle: "(Users, API's, Messaging)",
-        icon: "/public/assets/customized.svg",
+        icon: "/assets/customized.svg",
         iconAlt: "outline of two people",
         selected: false,
         cost: 200,
@@ -295,7 +297,7 @@ const websiteQuestions = [
         id: 3,
         title: "E-Commerce",
         subtitle: "(Sales)",
-        icon: "/public/assets/globe.svg",
+        icon: "/assets/globe.svg",
         iconAlt: "outline of three people",
         selected: false,
         cost: 250,
@@ -590,7 +592,7 @@ const Estimate = () => {
         style={{ marginBottom: "1.25em" }}
       >
         <Grid item xs={2}>
-          <img src="/public/assets/check.svg" alt="checkMark" />
+          <img src="/assets/check.svg" alt="checkMark" />
         </Grid>
         <Grid item xs={10}>
           <Typography variant="body2">
@@ -632,7 +634,7 @@ const Estimate = () => {
         style={{ marginBottom: "1.25em" }}
       >
         <Grid item xs={2}>
-          <img src="/public/assets/check.svg" alt="checkMark" />
+          <img src="/assets/check.svg" alt="checkMark" />
         </Grid>
         <Grid item xs={10}>
           <Typography variant="body2">
@@ -665,7 +667,7 @@ const Estimate = () => {
       </Grid>
       <Grid item container alignItems="center">
         <Grid item xs={2}>
-          <img src="/public/assets/check.svg" alt="checkMark" />
+          <img src="/assets/check.svg" alt="checkMark" />
         </Grid>
         <Grid item xs={10}>
           <Typography variant="body2">
@@ -681,7 +683,7 @@ const Estimate = () => {
     <Grid container direction="column" style={{ marginTop: "14em" }}>
       <Grid item container alignItems="center">
         <Grid item xs={2}>
-          <img src="/public/assets/check.svg" alt="checkMark" />
+          <img src="/assets/check.svg" alt="checkMark" />
         </Grid>
         <Grid item xs={10}>
           <Typography variant="body2">
@@ -819,8 +821,8 @@ const Estimate = () => {
               <img
                 src={
                   navigationPreviousDisabled()
-                    ? "/public/assets/backArrowDisabled.svg"
-                    : "/public/assets/backArrow"
+                    ? "/assets/backArrowDisabled.svg"
+                    : "/assets/backArrow"
                 }
                 alt="Previous Question"
               />
@@ -834,8 +836,8 @@ const Estimate = () => {
               <img
                 src={
                   navigationNextDisabled()
-                    ? "/public/assets/forwardArrowDisabled.svg"
-                    : "/public/assets/forwardArrow"
+                    ? "/assets/forwardArrowDisabled.svg"
+                    : "/assets/forwardArrow"
                 }
                 alt="Next Question"
               />
@@ -986,7 +988,7 @@ const Estimate = () => {
                 >
                   Place Request
                   <img
-                    src="/public/assets/send.svg"
+                    src="/assets/send.svg"
                     alt="paper Airplan"
                     style={{ marginLeft: "0.5em" }}
                   />

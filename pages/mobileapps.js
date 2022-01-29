@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import React from "react";
 import {
   Grid,
@@ -75,7 +77,7 @@ const MobileApps = props => {
               }}
             >
               <img
-                src="/public/assets/backArrow.svg"
+                src="/assets/backArrow.svg"
                 alt="Back to Custom software Developemnt "
               />
             </IconButton>
@@ -127,7 +129,7 @@ const MobileApps = props => {
               }}
             >
               <img
-                src="/public/assets/forwardArrow.svg"
+                src="/assets/forwardArrow.svg"
                 alt="Forwared Web Site  developemnt  page"
               />
             </IconButton>
@@ -220,7 +222,7 @@ const MobileApps = props => {
             </Typography>
           </Grid>
           <Grid item>
-            <img src="/public/assets/swissKnife.svg" alt="swiss army knife" />
+            <img src="/assets/swissKnife.svg" alt="swiss army knife" />
           </Grid>
         </Grid>
         <Grid
@@ -242,7 +244,7 @@ const MobileApps = props => {
           </Grid>
           <Grid item>
             <img
-              src="/public/assets/extendAccess.svg"
+              src="/assets/extendAccess.svg"
               alt="tear-one-off sign"
               style={{ maxWidth: matchesXS ? "20em" : "28em" }}
             />
@@ -257,7 +259,7 @@ const MobileApps = props => {
           </Grid>
           <Grid item>
             <img
-              src="/public/assets/increaseEngagement.svg"
+              src="/assets/increaseEngagement.svg"
               alt="app with notification"
             />
           </Grid>

@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "../src/Link";
 import { Hidden, makeStyles, Grid } from "@material-ui/core";
-import Image from "next/image";
 
 const useStyles = makeStyles(theme => ({
   footer: {
@@ -213,9 +213,9 @@ const Footer = props => {
             </Grid>
           </Grid>
         </Hidden>
-        <Image
+        <img
           alt="black decorative slash"
-          src="/public/assets/footerAdornment.svg"
+          src="/assets/footerAdornment.svg"
           className={classes.adorment}
         />
         <Grid
@@ -231,9 +231,9 @@ const Footer = props => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Image
+            <img
               alt="facebook logo"
-              src="/public/assets/facebook.svg"
+              src="/assets/facebook.svg"
               className={classes.icon}
             />
           </Grid>
@@ -244,9 +244,9 @@ const Footer = props => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Image
+            <img
               alt="twitter logo"
-              src="/public/assets/twitter.svg"
+              src="/assets/twitter.svg"
               className={classes.icon}
             />
           </Grid>
@@ -257,9 +257,9 @@ const Footer = props => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Image
+            <img
               alt="instagram logo"
-              src="/public/assets/instagram.svg"
+              src="/assets/instagram.svg"
               className={classes.icon}
             />
           </Grid>

@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import React from "react";
 import {
   Button,
@@ -141,7 +143,7 @@ const Services = props => {
             <img
               className={classes.icon}
               alt="Android/iOS App Development icon"
-              src="/public/assets/mobileIcon.svg"
+              src="/assets/mobileIcon.svg"
               width="250em"
             />
           </Grid>
@@ -193,7 +195,7 @@ const Services = props => {
             <img
               className={classes.icon}
               alt="custom software icon"
-              src="/public/assets/customSoftware.svg"
+              src="/assets/customSoftware.svg"
             />
           </Grid>
         </Grid>
@@ -245,7 +247,7 @@ const Services = props => {
             <img
               className={classes.icon}
               alt="Website software icon"
-              src="/public/assets/websiteIcon.svg"
+              src="/assets/websiteIcon.svg"
               width="250em"
             />
           </Grid>

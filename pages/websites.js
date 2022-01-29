@@ -1,4 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
+
 import React from "react";
 import {
   Grid,
@@ -66,7 +68,7 @@ const Websites = props => {
               }}
             >
               <img
-                src="/public/assets/backArrow.svg"
+                src="/assets/backArrow.svg"
                 alt="Back to Aandroid and IOS Developemnt page "
               />
             </IconButton>
@@ -86,8 +88,8 @@ const Websites = props => {
               paragraph
             >
               Having a website is a necessity in today's business world. They
-              give you one central, public location to let pepole know who you
-              are, what you do, and why yo're the best at it.
+              give you one central, location to let pepole know who you are,
+              what you do, and why yo're the best at it.
             </Typography>
             <Typography
               align={matchesMD ? "center" : undefined}
@@ -111,7 +113,7 @@ const Websites = props => {
               }}
             >
               <img
-                src="/public/assets/forwardArrow.svg"
+                src="/assets/forwardArrow.svg"
                 alt="Forwared to Services page"
               />
             </IconButton>
@@ -139,7 +141,7 @@ const Websites = props => {
             </Grid>
             <Grid item>
               <img
-                src="/public/assets/analytics.svg"
+                src="/assets/analytics.svg"
                 style={{ marginLeft: "-2.75em" }}
                 alt="grap with mangnifying glass revealing 1's and 0's"
               />
@@ -180,7 +182,7 @@ const Websites = props => {
             </Grid>
             <Grid item>
               <img
-                src="/public/assets/ecommerce.svg"
+                src="/assets/ecommerce.svg"
                 alt="grap with mangnifying glass revealing 1's and 0's"
               />
             </Grid>
@@ -227,7 +229,7 @@ const Websites = props => {
               </Typography>
             </Grid>
             <Grid item>
-              <img src="/public/assets/outreach.svg" alt="megaphone" />
+              <img src="/assets/outreach.svg" alt="megaphone" />
             </Grid>
           </Grid>
         </Grid>
@@ -270,7 +272,7 @@ const Websites = props => {
             </Grid>
             <Grid item>
               <img
-                src="/public/assets/seo.svg"
+                src="/assets/seo.svg"
                 alt="wesites standing on winner's podium"
               />
             </Grid>

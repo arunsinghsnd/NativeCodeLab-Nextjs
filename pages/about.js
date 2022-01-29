@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import {
   Grid,
@@ -160,7 +161,7 @@ const About = props => {
         <Grid item>
           <Grid item container justifyContent="center" lg>
             <img
-              src="/public/assets/history.svg"
+              src="/assets/history.svg"
               alt="quill pen sitting on top of book"
               style={{ maxHeight: matchesMD ? 200 : "22em" }}
             />
@@ -191,7 +192,7 @@ const About = props => {
         <Grid item>
           <Avatar
             alt="founder"
-            src="/public/assets/founderPic.jpg"
+            src="/assets/founderPic.jpg"
             className={classes.avatar}
           />
         </Grid>
@@ -220,7 +221,7 @@ const About = props => {
           >
             <Grid item>
               <img
-                src="/public/assets/yearbook.svg"
+                src="/assets/yearbook.svg"
                 alt="year book page about founder"
                 style={{ maxWidth: matchesMD ? 300 : undefined }}
               />
@@ -254,7 +255,7 @@ const About = props => {
           >
             <Grid item>
               <img
-                src="/public/assets/puppy.svg"
+                src="/assets/puppy.svg"
                 style={{ maxWidth: matchesMD ? 300 : undefined }}
                 alt="grey spotted puppy"
               />
