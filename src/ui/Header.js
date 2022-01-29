@@ -159,19 +159,19 @@ const Header = props => {
       name: "Custom Software Development",
       link: "/customsoftware",
       activeIndex: 1,
-      selectedIndex: 0,
+      selectedIndex: 1,
     },
     {
       name: "Android/iOS App Development",
       link: "/mobileapps",
       activeIndex: 1,
-      selectedIndex: 1,
+      selectedIndex: 2,
     },
     {
       name: "Website Development",
       link: "/websites",
       activeIndex: 1,
-      selectedIndex: 2,
+      selectedIndex: 3,
     },
   ];
 

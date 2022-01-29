@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import React from "react";
+import Head from "next/head";
 import {
   Grid,
   makeStyles,
@@ -54,6 +55,31 @@ const MobileApps = props => {
   };
   return (
     <Grid container direction="column">
+      <Head>
+        <title key="title">
+          iOS/Android App Design and Development | NativeCodeLab
+        </title>
+        <meta
+          name="description"
+          key="description"
+          content="Mobile Apps Made Easy | Our cutting-edge mobile app development process lets us build beautifully designed, carefully crafted apps for both iOS and Android."
+        />
+        <meta
+          property="og:title"
+          content="Bringing West Coast Technology to the Midwest | iOS/Android App Development"
+          key="og:title"
+        />
+        <meta
+          property="og:url"
+          key="og:url"
+          content="nativecodelab.netlify.app/mobileapps"
+        />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="nativecodelab.netlify.app/mobileapps"
+        />
+      </Head>
       <Grid
         item
         container

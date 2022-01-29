@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import Head from "next/head";
 import {
   Grid,
   makeStyles,
@@ -54,6 +55,29 @@ const About = props => {
 
   return (
     <Grid container direction="column">
+      <Head>
+        <title key="title">About Us - History & Team | NativeCodeLab</title>
+        <meta
+          name="description"
+          key="description"
+          content="We provide the fastest, most modern, affordable, and aesthetic software design and development services in the Midwest. Get a free online estimate now!"
+        />
+        <meta
+          property="og:title"
+          content="Bringing West Coast Technology to the Midwest | About Us"
+          key="og:title"
+        />
+        <meta
+          property="og:url"
+          key="og:url"
+          content="nativecodelab.netlify.app/about"
+        />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="nativecodelab.netlify.app/"
+        />
+      </Head>
       <Grid
         item
         className={classes.rowContainer}

@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import React from "react";
+import Head from "next/head";
 import {
   Button,
   Grid,
@@ -82,6 +83,31 @@ const Services = props => {
 
   return (
     <Grid container direction="column">
+      <Head>
+        <title key="title">
+          Top Custom Software Development Services | NativeCodeLab
+        </title>
+        <meta
+          name="description"
+          key="description"
+          content="Cutting-edge software, mobile app, and website development services with sleek custom designs - get a free online estimate instantly!"
+        />
+        <meta
+          property="og:title"
+          content="Bringing West Coast Technology to the Midwest | Services"
+          key="og:title"
+        />
+        <meta
+          property="og:url"
+          key="og:url"
+          content="nativecodelab.netlify.app/services"
+        />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="nativecodelab.netlify.app/services"
+        />
+      </Head>
       <Grid
         item
         style={{

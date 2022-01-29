@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import React, { useState } from "react";
+import Head from "next/head";
 import {
   Grid,
   makeStyles,
@@ -585,6 +586,29 @@ const Estimate = () => {
 
   const softwareSelection = (
     <Grid container direction="column">
+      <Head>
+        <title key="title">Free Custom Software Estimate | NativeCodeLab</title>
+        <meta
+          name="description"
+          key="description"
+          content="Use our free online estimate calculator to instantly check the cost of your custom software, mobile app, or website design and development project!"
+        />
+        <meta
+          property="og:title"
+          content="Bringing West Coast Technology to the Midwest | Free Estimate"
+          key="og:title"
+        />
+        <meta
+          property="og:url"
+          key="og:url"
+          content="nativecodelab.netlify.app/estimate"
+        />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="nativecodelab.netlify.app/estimate"
+        />
+      </Head>
       <Grid
         item
         container

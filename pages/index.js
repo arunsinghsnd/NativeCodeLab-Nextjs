@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
+import Head from "next/head";
 import Lottie from "react-lottie";
 import {
   Button,
@@ -141,6 +142,32 @@ const LandingPage = props => {
   };
   return (
     <Grid container direction="column" className={classes.mainContainer}>
+      <Head>
+        <title key="title">
+          Custom Software, Mobile Apps, and Websites | NativeCodeLab
+        </title>
+        <meta
+          name="description"
+          key="description"
+          content="Pristine software custom-designed from the ground up with cutting-edge optimizations. Use our free estimate calculator to check your project cost!"
+        />
+        <meta
+          property="og:title"
+          content="Bringing West Coast Technology to the Midwest | NativeCodeLab"
+          key="og:title"
+        />
+        <meta
+          property="og:url"
+          key="og:url"
+          content="nativecodelab.netlify.app"
+        />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="nativecodelab.netlify.app"
+        />
+      </Head>
+
       <Grid item>
         {/*-----Hero Block Start-------*/}
         <Grid

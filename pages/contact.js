@@ -15,6 +15,7 @@ import {
 
 import ButtonArrow from "../src/ui/ButtonArrow";
 import Link from "../src/Link";
+import Head from "next/head";
 
 const useStyles = makeStyles(theme => ({
   background: {
@@ -130,6 +131,29 @@ const Contact = props => {
 
   return (
     <Grid container direction="row">
+      <Head>
+        <title key="title">Contact Us | NativeCodeLab</title>
+        <meta
+          name="description"
+          key="description"
+          content="Let us guide you through the custom software design and development process. Send us a message with any of your ideas or questions to get started!"
+        />
+        <meta
+          property="og:title"
+          content="Bringing West Coast Technology to the Midwest | Contact Us"
+          key="og:title"
+        />
+        <meta
+          property="og:url"
+          key="og:url"
+          content="nativecodelab.netlify.app/contact"
+        />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="nativecodelab.netlify.app/contact"
+        />
+      </Head>
       <Grid
         item
         container

@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import React from "react";
+import Head from "next/head";
 import {
   Grid,
   makeStyles,
@@ -52,6 +53,31 @@ const Revolution = props => {
 
   return (
     <Grid container direction="column">
+      <Head>
+        <title key="title">
+          The Revolution - Cutting-Edge Software | NativeCodeLab
+        </title>
+        <meta
+          name="description"
+          key="description"
+          content="Visionary insights, coupled with cutting-edge technology, is a recipe for revolution. Get a free online estimate instantly!"
+        />
+        <meta
+          property="og:title"
+          content="Bringing West Coast Technology to the Midwest | The Revolution"
+          key="og:title"
+        />
+        <meta
+          property="og:url"
+          key="og:url"
+          content="nativecodelab.netlify.app/revolution"
+        />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="nativecodelab.netlify.app/revolution"
+        />
+      </Head>
       <Grid item className={classes.rowContainer} style={{ marginTop: "2em" }}>
         <Typography
           variant="h2"
