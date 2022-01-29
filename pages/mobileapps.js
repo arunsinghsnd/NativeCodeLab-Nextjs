@@ -14,7 +14,6 @@ import Lottie from "react-lottie";
 import integrationAnimation from "../src/animations/integrationAnimation/data.json";
 import CallToAction from "../src/ui/CallToAction";
 import Link from "../src/Link";
-import Image from "next/image";
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -75,7 +74,7 @@ const MobileApps = props => {
                 props.setSelectedIndex(1);
               }}
             >
-              <Image
+              <img
                 src="/public/assets/backArrow.svg"
                 alt="Back to Custom software Developemnt "
               />
@@ -127,7 +126,7 @@ const MobileApps = props => {
                 props.setSelectedIndex(3);
               }}
             >
-              <Image
+              <img
                 src="/public/assets/forwardArrow.svg"
                 alt="Forwared Web Site  developemnt  page"
               />
@@ -221,7 +220,7 @@ const MobileApps = props => {
             </Typography>
           </Grid>
           <Grid item>
-            <Image src="/public/assets/swissKnife.svg" alt="swiss army knife" />
+            <img src="/public/assets/swissKnife.svg" alt="swiss army knife" />
           </Grid>
         </Grid>
         <Grid
@@ -242,7 +241,7 @@ const MobileApps = props => {
             </Typography>
           </Grid>
           <Grid item>
-            <Image
+            <img
               src="/public/assets/extendAccess.svg"
               alt="tear-one-off sign"
               style={{ maxWidth: matchesXS ? "20em" : "28em" }}
@@ -257,7 +256,7 @@ const MobileApps = props => {
             </Typography>
           </Grid>
           <Grid item>
-            <Image
+            <img
               src="/public/assets/increaseEngagement.svg"
               alt="app with notification"
             />

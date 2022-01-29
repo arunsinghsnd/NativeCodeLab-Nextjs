@@ -14,18 +14,17 @@ import {
 
 import ButtonArrow from "../src/ui/ButtonArrow";
 import Link from "../src/Link";
-import Image from "next/image";
 
 const useStyles = makeStyles(theme => ({
   background: {
-    backgroundImage: url("/public/assets/background.jpg"),
+    backgroundimg: url("/public/assets/background.jpg"),
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     height: "60em",
     paddingBottom: "10em",
     [theme.breakpoints.down("md")]: {
-      backgroundImage: url("/public/assets/mobileBackground.jpg"),
+      backgroundimg: url("/public/assets/mobileBackground.jpg"),
     },
   },
   learnButton: {
@@ -163,7 +162,7 @@ const Contact = props => {
             </Grid>
             <Grid item container style={{ marginTop: "2em" }}>
               <Grid item>
-                <Image
+                <img
                   src="/public/assets/phone.svg"
                   alt="phone icon"
                   style={{ marginRight: "0.5em" }}
@@ -186,7 +185,7 @@ const Contact = props => {
 
             <Grid item container style={{ marginBottom: "2em" }}>
               <Grid item>
-                <Image
+                <img
                   src="/public/assets/email.svg"
                   alt="envalop"
                   style={{ marginRight: "0.5em", verticalAlign: "bottom" }}
@@ -272,7 +271,7 @@ const Contact = props => {
                 onClick={() => setOpen(true)}
               >
                 Send Message{" "}
-                <Image
+                <img
                   src="/public/assets/send.svg"
                   alt="paper airpalne"
                   style={{ marginLeft: "1em" }}
@@ -393,7 +392,7 @@ const Contact = props => {
                 onClick={() => setOpen(true)}
               >
                 Send Message{" "}
-                <Image
+                <img
                   src="/public/assets/send.svg"
                   alt="paper airpalne"
                   style={{ marginLeft: "1em" }}

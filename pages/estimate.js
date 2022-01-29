@@ -14,7 +14,6 @@ import {
   Hidden,
 } from "@material-ui/core";
 import { cloneDeep } from "lodash";
-import Image from "next/image";
 
 import Lottie from "react-lottie";
 
@@ -591,7 +590,7 @@ const Estimate = () => {
         style={{ marginBottom: "1.25em" }}
       >
         <Grid item xs={2}>
-          <Image src="/public/assets/check.svg" alt="checkMark" />
+          <img src="/public/assets/check.svg" alt="checkMark" />
         </Grid>
         <Grid item xs={10}>
           <Typography variant="body2">
@@ -633,7 +632,7 @@ const Estimate = () => {
         style={{ marginBottom: "1.25em" }}
       >
         <Grid item xs={2}>
-          <Image src="/public/assets/check.svg" alt="checkMark" />
+          <img src="/public/assets/check.svg" alt="checkMark" />
         </Grid>
         <Grid item xs={10}>
           <Typography variant="body2">
@@ -666,7 +665,7 @@ const Estimate = () => {
       </Grid>
       <Grid item container alignItems="center">
         <Grid item xs={2}>
-          <Image src="/public/assets/check.svg" alt="checkMark" />
+          <img src="/public/assets/check.svg" alt="checkMark" />
         </Grid>
         <Grid item xs={10}>
           <Typography variant="body2">
@@ -682,7 +681,7 @@ const Estimate = () => {
     <Grid container direction="column" style={{ marginTop: "14em" }}>
       <Grid item container alignItems="center">
         <Grid item xs={2}>
-          <Image src="/public/assets/check.svg" alt="checkMark" />
+          <img src="/public/assets/check.svg" alt="checkMark" />
         </Grid>
         <Grid item xs={10}>
           <Typography variant="body2">
@@ -794,7 +793,7 @@ const Estimate = () => {
                       </Typography>
                     </Grid>
                     <Grid item>
-                      <Image
+                      <img
                         src={option.icon}
                         alt={option.iconAlt}
                         className={classes.icon}
@@ -817,7 +816,7 @@ const Estimate = () => {
               disabled={navigationPreviousDisabled()}
               onClick={previousQuestion}
             >
-              <Image
+              <img
                 src={
                   navigationPreviousDisabled()
                     ? "/public/assets/backArrowDisabled.svg"
@@ -832,7 +831,7 @@ const Estimate = () => {
               disabled={navigationNextDisabled()}
               onClick={nextQuestion}
             >
-              <Image
+              <img
                 src={
                   navigationNextDisabled()
                     ? "/public/assets/forwardArrowDisabled.svg"
@@ -986,7 +985,7 @@ const Estimate = () => {
                   }
                 >
                   Place Request
-                  <Image
+                  <img
                     src="/public/assets/send.svg"
                     alt="paper Airplan"
                     style={{ marginLeft: "0.5em" }}

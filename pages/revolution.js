@@ -12,7 +12,6 @@ import technologyAnimation from "../src/animations/technologyAnimation/data.json
 
 import CallToAction from "../src/ui/CallToAction";
 import Lottie from "react-lottie";
-import Image from "next/image";
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -69,7 +68,7 @@ const Revolution = props => {
         style={{ marginTop: "5em" }}
       >
         <Grid item lg>
-          <Image
+          <img
             src="/public/assets/vision.svg"
             alt="mountain through binoculrs"
             style={{
@@ -323,7 +322,7 @@ const Revolution = props => {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
-          <Image
+          <img
             src="/public/assets/consultationIcon.svg"
             style={{ maxWidth: 700 }}
             alt="handshake"
@@ -375,8 +374,8 @@ const Revolution = props => {
             >
               Then it's time for us to start on your minimum viable product
               That's just a fancy term for a mockup, which doesn't include
-              colors, images, or any other pairshed design elemments but
-              captures the essential layout structure and functionality
+              colors, imgs, or any other pairshed design elemments but captures
+              the essential layout structure and functionality
             </Typography>
 
             <Typography
@@ -391,7 +390,7 @@ const Revolution = props => {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
-          <Image
+          <img
             src="/public/assets/mockupIcon.svg"
             width="100%"
             alt="Basci website degsin outline"
@@ -460,7 +459,7 @@ const Revolution = props => {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
-          <Image
+          <img
             src="/public/assets/reviewIcon.svg"
             alt="magnifying glass"
             width="100%"
@@ -517,7 +516,7 @@ const Revolution = props => {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
-          <Image
+          <img
             src="/public/assets/designIcon.svg"
             width="100%"
             alt="Basci website degsin outline"
@@ -574,7 +573,7 @@ const Revolution = props => {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
-          <Image
+          <img
             src="/public/assets/reviewIcon.svg"
             alt="Basci website degsin outline"
             width="100%"
@@ -670,7 +669,7 @@ const Revolution = props => {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
-          <Image
+          <img
             src="/public/assets/buildIcon.svg"
             alt="Basci website degsin outline"
             style={{ maxWidth: matchesMD ? 400 : 500 }}
@@ -739,7 +738,7 @@ const Revolution = props => {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
-          <Image
+          <img
             src="/public/assets/launchIcon.svg"
             width="100%"
             style={{ maxWidth: 200 }}
@@ -807,7 +806,7 @@ const Revolution = props => {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
-          <Image
+          <img
             src="/public/assets/maintainIcon.svg"
             width="100%"
             style={{ maxWidth: 500 }}
@@ -876,7 +875,7 @@ const Revolution = props => {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
-          <Image
+          <img
             src="/public/assets/iterateIcon.svg"
             alt="Basci website degsin outline"
             width="100%"

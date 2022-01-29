@@ -8,8 +8,7 @@ import {
   useMediaQuery,
 } from "@material-ui/core";
 import ButtonArrow from "./ButtonArrow";
-
-import { Link } from "react-router-dom";
+import Link from "../Link";
 
 const useStyles = makeStyles(theme => ({
   learnButton: {
@@ -22,7 +21,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   background: {
-    backgroundImage: url("/public/assets/background.jpg"),
+    backgroundImage: `url("/public/assets/background.jpg")`,
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
@@ -30,7 +29,7 @@ const useStyles = makeStyles(theme => ({
     height: "60em",
     width: "100%",
     [theme.breakpoints.down("md")]: {
-      backgroundImage: url("/public/assets/mobileBackground.jpg"),
+      backgroundImage: `url("/public/assets/mobileBackground.jpg")`,
       backgroundAttachment: "inherit",
     },
   },
@@ -92,7 +91,7 @@ const CallToAction = props => {
                 variant="outlined"
                 className={classes.learnButton}
                 component={Link}
-                to="/revolution"
+                href="/revolution"
                 onClick={() => props.setValue(2)}
               >
                 <span style={{ marginRight: 5 }}>Learn More</span>
@@ -111,7 +110,7 @@ const CallToAction = props => {
           variant="contained"
           className={classes.estimateButton}
           component={Link}
-          to="/estimate"
+          href="/estimate"
           onClick={() => props.setValue(5)}
         >
           Free Estimate

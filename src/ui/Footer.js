@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "../src/Link";
 import { Hidden, makeStyles, Grid } from "@material-ui/core";
 import Image from "next/image";
 
@@ -67,7 +67,7 @@ const Footer = props => {
                 <Grid
                   item
                   component={Link}
-                  to="/"
+                  href="/"
                   onClick={() => props.setValue(0)}
                   className={classes.link}
                 >
@@ -80,7 +80,7 @@ const Footer = props => {
                 <Grid
                   item
                   component={Link}
-                  to="/services"
+                  href="/services"
                   onClick={() => {
                     props.setValue(1);
                     props.setSelectedIndex(0);
@@ -92,7 +92,7 @@ const Footer = props => {
                 <Grid
                   item
                   component={Link}
-                  to="/customsoftware"
+                  href="/customsoftware"
                   onClick={() => {
                     props.setValue(1);
                     props.setSelectedIndex(1);
@@ -104,7 +104,7 @@ const Footer = props => {
                 <Grid
                   item
                   component={Link}
-                  to="/mobileapps"
+                  href="/mobileapps"
                   onClick={() => {
                     props.setValue(1);
                     props.setSelectedIndex(2);
@@ -116,7 +116,7 @@ const Footer = props => {
                 <Grid
                   item
                   component={Link}
-                  to="/websites"
+                  href="/websites"
                   onClick={() => {
                     props.setValue(1);
                     props.setSelectedIndex(3);
@@ -132,7 +132,7 @@ const Footer = props => {
                 <Grid
                   item
                   component={Link}
-                  to="/revolution"
+                  href="/revolution"
                   onClick={() => props.setValue(2)}
                   className={classes.link}
                 >
@@ -141,7 +141,7 @@ const Footer = props => {
                 <Grid
                   item
                   component={Link}
-                  to="/revolution"
+                  href="/revolution"
                   onClick={() => props.setValue(2)}
                   className={classes.link}
                 >
@@ -150,7 +150,7 @@ const Footer = props => {
                 <Grid
                   item
                   component={Link}
-                  to="/revolution"
+                  href="/revolution"
                   onClick={() => props.setValue(2)}
                   className={classes.link}
                 >
@@ -159,7 +159,7 @@ const Footer = props => {
                 <Grid
                   item
                   component={Link}
-                  to="/revolution"
+                  href="/revolution"
                   onClick={() => props.setValue(2)}
                   className={classes.link}
                 >
@@ -172,7 +172,7 @@ const Footer = props => {
                 <Grid
                   item
                   component={Link}
-                  to="/about"
+                  href="/about"
                   onClick={() => props.setValue(3)}
                   className={classes.link}
                 >
@@ -181,7 +181,7 @@ const Footer = props => {
                 <Grid
                   item
                   component={Link}
-                  to="/about"
+                  href="/about"
                   onClick={() => props.setValue(3)}
                   className={classes.link}
                 >
@@ -190,7 +190,7 @@ const Footer = props => {
                 <Grid
                   item
                   component={Link}
-                  to="/about"
+                  href="/about"
                   onClick={() => props.setValue(3)}
                   className={classes.link}
                 >
@@ -203,7 +203,7 @@ const Footer = props => {
                 <Grid
                   item
                   component={Link}
-                  to="/contact"
+                  href="/contact"
                   onClick={() => props.setValue(4)}
                   className={classes.link}
                 >

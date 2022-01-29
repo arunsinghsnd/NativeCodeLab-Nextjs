@@ -16,7 +16,6 @@ import animationData from "../src/animations/landinganimation/data.json";
 import ButtonArrow from "../src/ui/ButtonArrow";
 import CallToAction from "../src/ui/CallToAction";
 
-import Image from "next/image";
 import Link from "../src/Link";
 
 const useStyle = makeStyles(theme => ({
@@ -94,7 +93,7 @@ const useStyle = makeStyles(theme => ({
     },
   },
   revolutionBackground: {
-    backgroundImage: url("/public/assets/repeatingBackground.svg"),
+    backgroundimg: `url("/public/assets/repeatingBackground.svg")`,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -116,7 +115,7 @@ const useStyle = makeStyles(theme => ({
     },
   },
   infoBackground: {
-    backgroundImage: url("/public/assets/infoBackground.svg"),
+    backgroundimg: `url("/public/assets/infoBackground.svg")`,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -237,7 +236,7 @@ const LandingPage = props => {
             </Button>
           </Grid>
           <Grid item>
-            <Image
+            <img
               className={classes.icon}
               alt="custom software icon"
               src="/public/assets/customSoftware.svg"
@@ -287,7 +286,7 @@ const LandingPage = props => {
             </Button>
           </Grid>
           <Grid item style={{ marginRight: matchesSM ? 0 : "5em" }}>
-            <Image
+            <img
               className={classes.icon}
               alt="Android/iOS App Development icon"
               src="/public/assets/mobileIcon.svg"
@@ -337,7 +336,7 @@ const LandingPage = props => {
             </Button>
           </Grid>
           <Grid item>
-            <Image
+            <img
               className={classes.icon}
               alt="Website software icon"
               src="/public/assets/websiteIcon.svg"

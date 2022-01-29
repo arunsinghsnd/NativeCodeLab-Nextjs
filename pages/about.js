@@ -11,7 +11,6 @@ import {
 } from "@material-ui/core";
 
 import CallToAction from "../src/ui/CallToAction";
-import Image from "next/image";
 
 const useStyles = makeStyles(theme => ({
   missionStatement: {
@@ -160,7 +159,7 @@ const About = props => {
         </Grid>
         <Grid item>
           <Grid item container justifyContent="center" lg>
-            <Image
+            <img
               src="/public/assets/history.svg"
               alt="quill pen sitting on top of book"
               style={{ maxHeight: matchesMD ? 200 : "22em" }}
@@ -220,7 +219,7 @@ const About = props => {
             style={{ marginBottom: matchesMD ? "2.5em" : 0 }}
           >
             <Grid item>
-              <Image
+              <img
                 src="/public/assets/yearbook.svg"
                 alt="year book page about founder"
                 style={{ maxWidth: matchesMD ? 300 : undefined }}
@@ -254,7 +253,7 @@ const About = props => {
             alignItems={matchesMD ? "center" : "flex-end"}
           >
             <Grid item>
-              <Image
+              <img
                 src="/public/assets/puppy.svg"
                 style={{ maxWidth: matchesMD ? 300 : undefined }}
                 alt="grey spotted puppy"

@@ -13,7 +13,6 @@ import {
 import CallToAction from "../src/ui/CallToAction";
 
 import Link from "../src/Link";
-import Image from "next/image";
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -66,7 +65,7 @@ const Websites = props => {
                 props.setSelectedIndex(2);
               }}
             >
-              <Image
+              <img
                 src="/public/assets/backArrow.svg"
                 alt="Back to Aandroid and IOS Developemnt page "
               />
@@ -111,7 +110,7 @@ const Websites = props => {
                 props.setSelectedIndex(0);
               }}
             >
-              <Image
+              <img
                 src="/public/assets/forwardArrow.svg"
                 alt="Forwared to Services page"
               />
@@ -139,7 +138,7 @@ const Websites = props => {
               </Typography>
             </Grid>
             <Grid item>
-              <Image
+              <img
                 src="/public/assets/analytics.svg"
                 style={{ marginLeft: "-2.75em" }}
                 alt="grap with mangnifying glass revealing 1's and 0's"
@@ -180,7 +179,7 @@ const Websites = props => {
               </Typography>
             </Grid>
             <Grid item>
-              <Image
+              <img
                 src="/public/assets/ecommerce.svg"
                 alt="grap with mangnifying glass revealing 1's and 0's"
               />
@@ -228,7 +227,7 @@ const Websites = props => {
               </Typography>
             </Grid>
             <Grid item>
-              <Image src="/public/assets/outreach.svg" alt="megaphone" />
+              <img src="/public/assets/outreach.svg" alt="megaphone" />
             </Grid>
           </Grid>
         </Grid>
@@ -270,7 +269,7 @@ const Websites = props => {
               </Typography>
             </Grid>
             <Grid item>
-              <Image
+              <img
                 src="/public/assets/seo.svg"
                 alt="wesites standing on winner's podium"
               />

@@ -9,7 +9,6 @@ import {
 } from "@material-ui/core";
 
 import ButtonArrow from "../src/ui/ButtonArrow";
-import Image from "next/image";
 import Link from "../src/Link";
 
 const useStyles = makeStyles(theme => ({
@@ -139,7 +138,7 @@ const Services = props => {
             </Button>
           </Grid>
           <Grid item style={{ marginRight: matchesSM ? 0 : "5em" }}>
-            <Image
+            <img
               className={classes.icon}
               alt="Android/iOS App Development icon"
               src="/public/assets/mobileIcon.svg"
@@ -191,7 +190,7 @@ const Services = props => {
             </Button>
           </Grid>
           <Grid item>
-            <Image
+            <img
               className={classes.icon}
               alt="custom software icon"
               src="/public/assets/customSoftware.svg"
@@ -243,7 +242,7 @@ const Services = props => {
             </Button>
           </Grid>
           <Grid item style={{ marginRight: matchesSM ? 0 : "5em" }}>
-            <Image
+            <img
               className={classes.icon}
               alt="Website software icon"
               src="/public/assets/websiteIcon.svg"

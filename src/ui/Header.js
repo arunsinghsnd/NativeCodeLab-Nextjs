@@ -18,8 +18,7 @@ import {
   ListItemText,
 } from "@material-ui/core";
 
-import { Link } from "react-router-dom";
-import logo from "../../assets/logo/NativeCodeLab-logo-white.png";
+import Link from "../src/Link";
 import MenuIcon from "@material-ui/icons/Menu";
 import Image from "next/image";
 

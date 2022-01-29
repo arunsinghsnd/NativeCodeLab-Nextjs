@@ -10,7 +10,6 @@ import {
   Hidden,
 } from "@material-ui/core";
 
-import Image from "next/image";
 import Lottie from "react-lottie";
 
 import documentsAnimation from "../src/animations/documentsAnimation/data";
@@ -107,7 +106,7 @@ const CustomSoftware = props => {
                 props.setSelectedIndex(1);
               }}
             >
-              <Image
+              <img
                 src="/public/assets/backArrow.svg"
                 alt="Back to Services Page"
               />
@@ -171,7 +170,7 @@ const CustomSoftware = props => {
                 props.setSelectedIndex(2);
               }}
             >
-              <Image
+              <img
                 src="/public/assets/forwardArrow.svg"
                 alt="Forwared to android and iOS App developemnt  page"
               />
@@ -199,7 +198,7 @@ const CustomSoftware = props => {
             <Typography variant="h4">Save Energy</Typography>
           </Grid>
           <Grid item>
-            <Image alt="LightBuld" src="/public/assets/bulb.svg" />
+            <img alt="LightBuld" src="/public/assets/bulb.svg" />
           </Grid>
         </Grid>
         <Grid
@@ -218,7 +217,7 @@ const CustomSoftware = props => {
             <Typography variant="h4">Save Time</Typography>
           </Grid>
           <Grid item>
-            <Image alt="StopWacth" src="/public/assets/stopwatch.svg" />
+            <img alt="StopWacth" src="/public/assets/stopwatch.svg" />
           </Grid>
         </Grid>
         <Grid
@@ -233,7 +232,7 @@ const CustomSoftware = props => {
             <Typography variant="h4">Save Money</Typography>
           </Grid>
           <Grid item>
-            <Image alt="Cash" src="/public/assets/cash.svg" />
+            <img alt="Cash" src="/public/assets/cash.svg" />
           </Grid>
         </Grid>
       </Grid>
@@ -337,7 +336,7 @@ const CustomSoftware = props => {
       >
         <Grid item container direction="column" alignItems="center">
           <Grid item>
-            <Image
+            <img
               src="/public/assets/root.svg"
               alt="Tree with roots extending out"
               height={matchesSM ? "300em" : "450em"}
