@@ -1,44 +1,41 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect } from "react";
 import Router from "next/router";
 import ReactGA from "react-ga";
-import {
-  AppBar,
-  Toolbar,
-  useScrollTrigger,
-  makeStyles,
-  Tabs,
-  Tab,
-  Button,
-  IconButton,
-  Menu,
-  MenuItem,
-  useMediaQuery,
-  useTheme,
-  SwipeableDrawer,
-  List,
-  ListItem,
-  ListItemText,
-  Hidden,
-  ClickAwayListener,
-  Grow,
-  Paper,
-  Popper,
-  ExpansionPanel,
-  ExpansionPanelSummary,
-  ExpansionPanelDetails,
-  ExpandMoreIcon,
-  Grid,
-  MenuList,
-} from "@material-ui/core";
-
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+import { makeStyles } from "@material-ui/core/styles";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import Button from "@material-ui/core/Button";
 import Link from "./Link";
+import MenuList from "@material-ui/core/MenuList";
+import MenuItem from "@material-ui/core/MenuItem";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from "@material-ui/core/styles";
+import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
+import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import Hidden from "@material-ui/core/Hidden";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import Grow from "@material-ui/core/Grow";
+import Paper from "@material-ui/core/Paper";
+import Popper from "@material-ui/core/Popper";
+import ExpansionPanel from "@material-ui/core/ExpansionPanel";
+import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
+import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import Grid from "@material-ui/core/Grid";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+
 import { LazyLoadComponent } from "react-lazy-load-image-component";
 
 function ElevationScroll(props) {
   const { children } = props;
+
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
@@ -191,7 +188,6 @@ const Header = props => {
     setOpenMenu(false);
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const menuOptions = [
     {
       name: "Custom Software Development",
@@ -213,7 +209,6 @@ const Header = props => {
     },
   ];
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const routes = [
     { name: "Home", link: "/", activeIndex: 0 },
     {
@@ -273,16 +268,20 @@ const Header = props => {
   });
 
   return (
-    <>
+    <React.Fragment>
       <ElevationScroll>
         <AppBar position="fixed" className={classes.appbar}>
           <Toolbar disableGutters>
             <Button
               component={Link}
               href="/"
-              onClick={() => props.setValue(0)}
-              className={classes.logoContainer}
               disableRipple
+              onClick={() => {
+                props.setValue(0);
+                setOpenMenu(false);
+                setOpenDrawer(false);
+              }}
+              className={classes.logoContainer}
             >
               <img
                 className={classes.logo}
@@ -543,7 +542,7 @@ const Header = props => {
         </AppBar>
       </ElevationScroll>
       <div className={classes.toolbarMargin} />
-    </>
+    </React.Fragment>
   );
 };
 
