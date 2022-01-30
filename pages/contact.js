@@ -16,7 +16,7 @@ import {
 } from "@material-ui/core";
 
 import ButtonArrow from "../src/ui/ButtonArrow";
-import Link from "../src/Link";
+import Link from "../src/ui/Link";
 import Head from "next/head";
 
 const useStyles = makeStyles(theme => ({
@@ -98,6 +98,9 @@ const Contact = props => {
 
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const [alert, setAlert] = useState({ open: false, color: "" });
+  const [alertMessage, setAlertMesssage] = useState("");
 
   const onChange = event => {
     let valid;

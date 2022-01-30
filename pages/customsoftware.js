@@ -27,7 +27,7 @@ import automationAnimation from "../src/animations/automationAnimation/data.json
 // import uxAnimation from "../src/animations/uxAnimation/data";
 import animationData from "../src/animations/landinganimation/data.json";
 import CallToAction from "../src/ui/CallToAction";
-import Link from "../src/Link";
+import Link from "../src/ui/Link";
 
 const useStyles = makeStyles(theme => ({
   heading: {
