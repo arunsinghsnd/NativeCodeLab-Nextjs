@@ -10,26 +10,29 @@ import {
 import ButtonArrow from "./ButtonArrow";
 import Link from "./Link";
 
+const background = "static/assets/background.jpg";
+const mobileBackground = "static/assets/mobileBackground.jpg";
+
 const useStyles = makeStyles(theme => ({
   learnButton: {
-    ...theme.typography.learnButtom,
-    fontSize: "0.9rem",
-    height: 45,
+    ...theme.typography.learnButton,
+    fontSize: "0.7rem",
+    height: 35,
     padding: 5,
     [theme.breakpoints.down("sm")]: {
       marginBottom: "2em",
     },
   },
   background: {
-    backgroundImage: `url("/assets/background.jpg")`,
+    backgroundImage: `url(${background})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
     backgroundAttachment: "fixed",
+    backgroundRepeat: "no-repeat",
     height: "60em",
     width: "100%",
     [theme.breakpoints.down("md")]: {
-      backgroundImage: `url("/assets/mobileBackground.jpg")`,
+      backgroundImage: `url(${mobileBackground})`,
       backgroundAttachment: "inherit",
     },
   },
@@ -46,8 +49,8 @@ const useStyles = makeStyles(theme => ({
       backgroundColor: theme.palette.secondary.light,
     },
     [theme.breakpoints.down("sm")]: {
-      marginRight: 0,
       marginLeft: 0,
+      marginRight: 0,
     },
   },
 }));
@@ -60,7 +63,6 @@ const CallToAction = props => {
   return (
     <Grid
       container
-      style={{ height: "30em" }}
       alignItems="center"
       justifyContent={matchesSM ? "center" : "space-between"}
       className={classes.background}
@@ -75,12 +77,22 @@ const CallToAction = props => {
       >
         <Grid container direction="column">
           <Grid item>
-            <Typography variant="h2">
+            <Typography
+              gutterBottom
+              variant="h1"
+              style={{ lineHeight: matchesSM ? 1.1 : null }}
+            >
               Simple Software.
-              <br /> Revolutionary Results.
+              {matchesSM && <br />}
+              <br />
+              Revolutionary Results.
             </Typography>
-            <Typography variant="subtitle2" style={{ fontSize: "1.5rem" }}>
-              Take a advantage of the 21st Century.
+            <Typography
+              variant="subtitle2"
+              gutterBottom
+              style={{ fontSize: matchesSM ? "1.25rem" : "1.5rem" }}
+            >
+              Take advantage of the 21st Century.
             </Typography>
             <Grid
               container
@@ -88,16 +100,16 @@ const CallToAction = props => {
               item
             >
               <Button
-                variant="outlined"
-                className={classes.learnButton}
                 component={Link}
                 href="/revolution"
+                variant="outlined"
+                className={classes.learnButton}
                 onClick={() => props.setValue(2)}
               >
                 <span style={{ marginRight: 5 }}>Learn More</span>
                 <ButtonArrow
-                  height={15}
-                  width={15}
+                  width={10}
+                  height={10}
                   fill={theme.palette.common.blue}
                 />
               </Button>
@@ -107,11 +119,17 @@ const CallToAction = props => {
       </Grid>
       <Grid item>
         <Button
-          variant="contained"
-          className={classes.estimateButton}
           component={Link}
           href="/estimate"
-          onClick={() => props.setValue(5)}
+          variant="contained"
+          className={classes.estimateButton}
+          onClick={() => {
+            props.setValue(5);
+            ReactGA.event({
+              category: "Estimate",
+              action: "Call To Action Pressed",
+            });
+          }}
         >
           Free Estimate
         </Button>
