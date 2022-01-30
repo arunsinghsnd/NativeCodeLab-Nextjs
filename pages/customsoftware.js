@@ -14,6 +14,13 @@ import {
 
 import Lottie from "react-lottie";
 
+const backArrow = "static/assets/backArrow.svg";
+const forwardArrow = "static/assets/forwardArrow.svg";
+const lightbulb = "static/assets/bulb.svg";
+const cash = "static/assets/cash.svg";
+const stopwatch = "static/assets/stopwatch.svg";
+const roots = "static/assets/root.svg";
+
 // import documentsAnimation from "../src/animations/scaleAnimation/data.json";
 import scaleAnimation from "../src/animations/scaleAnimation/data.json";
 import automationAnimation from "../src/animations/automationAnimation/data.json";
@@ -134,15 +141,23 @@ const CustomSoftware = props => {
                 props.setSelectedIndex(0);
               }}
             >
-              <img src="/assets/backArrow.svg" alt="Back to Services Page" />
+              <img src={backArrow} alt="Back to Services Page" />
             </IconButton>
           </Grid>
         </Hidden>
 
         <Grid item container direction="column" className={classes.heading}>
           <Grid item>
-            <Typography align={matchesMD ? "center" : undefined} variant="h1">
-              Custom Software Developemnt
+            <Typography
+              gutterBottom={matchesXS}
+              style={{
+                lineHeight: matchesXS ? 1.2 : undefined,
+                fontSize: matchesXS ? "2.25em" : undefined,
+              }}
+              align={matchesMD ? "center" : undefined}
+              variant="h1"
+            >
+              Custom Software Development
             </Typography>
           </Grid>
           <Grid item>
@@ -196,7 +211,7 @@ const CustomSoftware = props => {
               }}
             >
               <img
-                src="/assets/forwardArrow.svg"
+                src={forwardArrow}
                 alt="Forwared to android and iOS App developemnt  page"
               />
             </IconButton>
@@ -223,7 +238,7 @@ const CustomSoftware = props => {
             <Typography variant="h4">Save Energy</Typography>
           </Grid>
           <Grid item>
-            <img alt="LightBuld" src="/assets/bulb.svg" />
+            <img alt="LightBuld" src={lightbulb} />
           </Grid>
         </Grid>
         <Grid
@@ -242,7 +257,7 @@ const CustomSoftware = props => {
             <Typography variant="h4">Save Time</Typography>
           </Grid>
           <Grid item>
-            <img alt="StopWacth" src="/assets/stopwatch.svg" />
+            <img src={stopwatch} alt="stopwatch" />
           </Grid>
         </Grid>
         <Grid
@@ -257,7 +272,7 @@ const CustomSoftware = props => {
             <Typography variant="h4">Save Money</Typography>
           </Grid>
           <Grid item>
-            <img alt="Cash" src="/assets/cash.svg" />
+            <img src={cash} alt="cash" />
           </Grid>
         </Grid>
       </Grid>
@@ -362,7 +377,7 @@ const CustomSoftware = props => {
         <Grid item container direction="column" alignItems="center">
           <Grid item>
             <img
-              src="/assets/root.svg"
+              src={roots}
               alt="Tree with roots extending out"
               height={matchesSM ? "300em" : "450em"}
               width={matchesSM ? "300em" : "450em"}
