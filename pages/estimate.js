@@ -1,7 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import ReactGA from "react-ga";
 import Head from "next/head";
 import {
   Grid,
@@ -15,11 +16,37 @@ import {
   DialogContent,
   TextField,
   Hidden,
+  CircularProgress,
+  Snackbar,
 } from "@material-ui/core";
 import { cloneDeep } from "lodash";
 
 import Lottie from "react-lottie";
 
+const check = "static/assets/check.svg";
+const send = "static/assets/send.svg";
+const software = "static/assets/software.svg";
+const mobile = "static/assets/mobile.svg";
+const website = "static/assets/website.svg";
+const backArrow = "static/assets/backArrow.svg";
+const backArrowDisabled = "static/assets/backArrowDisabled.svg";
+const forwardArrow = "static/assets/forwardArrow.svg";
+const forwardArrowDisabled = "static/assets/forwardArrowDisabled.svg";
+const camera = "static/assets/camera.svg";
+const upload = "static/assets/upload.svg";
+const person = "static/assets/person.svg";
+const persons = "static/assets/persons.svg";
+const info = "static/assets/info.svg";
+const bell = "static/assets/bell.svg";
+const people = "static/assets/people.svg";
+const usersIcon = "static/assets/users.svg";
+const iPhone = "static/assets/iphone.svg";
+const gps = "static/assets/gps.svg";
+const customized = "static/assets/customized.svg";
+const data = "static/assets/data.svg";
+const android = "static/assets/android.svg";
+const globe = "static/assets/globe.svg";
+const biometrics = "static/assets/biometrics.svg";
 import estimateAnimation from "../src/animations/estimateAnimation/data.json";
 
 const useStyles = makeStyles(theme => ({
@@ -63,26 +90,26 @@ const defaultQuestions = [
         id: 1,
         title: "Custom Software Development",
         subtitle: null,
-        icon: "/assets/software.svg",
-        iconAlt: "three floating Screens",
+        icon: software,
+        iconAlt: "three floating screens",
         selected: false,
         cost: 0,
       },
       {
         id: 2,
-        title: "Android/iOS App Development",
+        title: "iOS/Android App Development",
         subtitle: null,
-        icon: "/assets/mobile.svg",
-        iconAlt: "Phone and tablet",
+        icon: mobile,
+        iconAlt: "outlines of phones and tablets",
         selected: false,
         cost: 0,
       },
       {
         id: 3,
-        title: "Website & Web App's Development",
+        title: "Website Development",
         subtitle: null,
-        icon: "/assets/website.svg",
-        iconAlt: "Computer Outline",
+        icon: website,
+        iconAlt: "computer outline",
         selected: false,
         cost: 0,
       },
@@ -91,7 +118,40 @@ const defaultQuestions = [
 ];
 
 const softwareQuestions = [
-  { ...defaultQuestions[0], active: false },
+  {
+    id: 1,
+    title: "Which service are you interested in?",
+    active: false,
+    options: [
+      {
+        id: 1,
+        title: "Custom Software Development",
+        subtitle: null,
+        icon: software,
+        iconAlt: "three floating screens",
+        selected: false,
+        cost: 0,
+      },
+      {
+        id: 2,
+        title: "iOS/Android App Development",
+        subtitle: null,
+        icon: mobile,
+        iconAlt: "outlines of phones and tablets",
+        selected: false,
+        cost: 0,
+      },
+      {
+        id: 3,
+        title: "Website Development",
+        subtitle: null,
+        icon: website,
+        iconAlt: "computer outline",
+        selected: false,
+        cost: 0,
+      },
+    ],
+  },
   {
     id: 2,
     title: "Which platforms do you need supported?",
@@ -101,28 +161,28 @@ const softwareQuestions = [
         id: 1,
         title: "Web Application",
         subtitle: null,
-        icon: "/assets/website.svg",
+        icon: website,
         iconAlt: "computer outline",
         selected: false,
-        cost: 100,
+        cost: 1000,
       },
       {
         id: 2,
         title: "iOS Application",
         subtitle: null,
-        icon: "/assets/iphone.svg",
+        icon: iPhone,
         iconAlt: "outline of iphone",
         selected: false,
-        cost: 100,
+        cost: 1000,
       },
       {
         id: 3,
         title: "Android Application",
         subtitle: null,
-        icon: "/assets/android.svg",
+        icon: android,
         iconAlt: "outlines of android phone",
         selected: false,
-        cost: 100,
+        cost: 1000,
       },
     ],
     active: true,
@@ -136,28 +196,28 @@ const softwareQuestions = [
         id: 1,
         title: "Photo/Video",
         subtitle: null,
-        icon: "/assets/android.svg",
+        icon: camera,
         iconAlt: "camera outline",
         selected: false,
-        cost: 25,
+        cost: 250,
       },
       {
         id: 2,
         title: "GPS",
         subtitle: null,
-        icon: "/assets/gps.svg",
+        icon: gps,
         iconAlt: "gps pin",
         selected: false,
-        cost: 25,
+        cost: 250,
       },
       {
         id: 3,
         title: "File Transfer",
         subtitle: null,
-        icon: "/assets/upload.svg",
+        icon: upload,
         iconAlt: "outline of cloud with arrow pointing up",
         selected: false,
-        cost: 25,
+        cost: 250,
       },
     ],
     active: false,
@@ -171,28 +231,28 @@ const softwareQuestions = [
         id: 1,
         title: "Users/Authentication",
         subtitle: null,
-        icon: "/assets/users.svg",
+        icon: usersIcon,
         iconAlt: "outline of a person with a plus sign",
         selected: false,
-        cost: 25,
+        cost: 250,
       },
       {
         id: 2,
         title: "Biometrics",
         subtitle: null,
-        icon: "/assets/biometrics.svg",
+        icon: biometrics,
         iconAlt: "fingerprint",
         selected: false,
-        cost: 25,
+        cost: 250,
       },
       {
         id: 3,
         title: "Push Notifications",
         subtitle: null,
-        icon: "/assets/bell.svg",
+        icon: bell,
         iconAlt: "outline of a bell",
         selected: false,
-        cost: 25,
+        cost: 250,
       },
     ],
     active: false,
@@ -206,28 +266,28 @@ const softwareQuestions = [
         id: 1,
         title: "Low Complexity",
         subtitle: "(Informational)",
-        icon: "/assets/info.svg",
+        icon: info,
         iconAlt: "'i' inside a circle",
         selected: false,
-        cost: 25,
+        cost: 250,
       },
       {
         id: 2,
         title: "Medium Complexity",
         subtitle: "(Interactive, Customizable, Realtime)",
-        icon: "/assets/customized.svg",
+        icon: customized,
         iconAlt: "two toggle switches",
         selected: false,
-        cost: 50,
+        cost: 500,
       },
       {
         id: 3,
         title: "High Complexity",
         subtitle: "(Data Modeling and Computation)",
-        icon: "/assets/data.svg",
+        icon: data,
         iconAlt: "outline of line graph",
         selected: false,
-        cost: 100,
+        cost: 1000,
       },
     ],
     active: false,
@@ -241,7 +301,7 @@ const softwareQuestions = [
         id: 1,
         title: "0-10",
         subtitle: null,
-        icon: "/assets/person.svg",
+        icon: person,
         iconAlt: "person outline",
         selected: false,
         cost: 1,
@@ -250,19 +310,19 @@ const softwareQuestions = [
         id: 2,
         title: "10-100",
         subtitle: null,
-        icon: "/assets/persons.svg",
+        icon: persons,
         iconAlt: "outline of two people",
         selected: false,
-        cost: 1.25,
+        cost: 1.125,
       },
       {
         id: 3,
         title: "100+",
         subtitle: null,
-        icon: "/assets/people.svg",
+        icon: people,
         iconAlt: "outline of three people",
         selected: false,
-        cost: 1.5,
+        cost: 1.25,
       },
     ],
     active: false,
@@ -270,7 +330,40 @@ const softwareQuestions = [
 ];
 
 const websiteQuestions = [
-  { ...defaultQuestions[0], active: false },
+  {
+    id: 1,
+    title: "Which service are you interested in?",
+    active: false,
+    options: [
+      {
+        id: 1,
+        title: "Custom Software Development",
+        subtitle: null,
+        icon: software,
+        iconAlt: "three floating screens",
+        selected: false,
+        cost: 0,
+      },
+      {
+        id: 2,
+        title: "iOS/Android App Development",
+        subtitle: null,
+        icon: mobile,
+        iconAlt: "outlines of phones and tablets",
+        selected: false,
+        cost: 0,
+      },
+      {
+        id: 3,
+        title: "Website Development",
+        subtitle: null,
+        icon: website,
+        iconAlt: "computer outline",
+        selected: false,
+        cost: 0,
+      },
+    ],
+  },
   {
     id: 2,
     title: "Which type of website are you wanting?",
@@ -280,28 +373,28 @@ const websiteQuestions = [
         id: 1,
         title: "Basic",
         subtitle: "(Informational)",
-        icon: "/assets/info.svg",
+        icon: info,
         iconAlt: "person outline",
         selected: false,
-        cost: 100,
+        cost: 1000,
       },
       {
         id: 2,
         title: "Interactive",
         subtitle: "(Users, API's, Messaging)",
-        icon: "/assets/customized.svg",
+        icon: customized,
         iconAlt: "outline of two people",
         selected: false,
-        cost: 200,
+        cost: 2000,
       },
       {
         id: 3,
         title: "E-Commerce",
         subtitle: "(Sales)",
-        icon: "/assets/globe.svg",
+        icon: globe,
         iconAlt: "outline of three people",
         selected: false,
-        cost: 250,
+        cost: 2500,
       },
     ],
     active: true,
@@ -311,8 +404,12 @@ const websiteQuestions = [
 const Estimate = () => {
   const classes = useStyles();
   const theme = useTheme();
+
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+
+  const myRef = useRef(null);
 
   const [questions, setQuestions] = useState(defaultQuestions);
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -336,6 +433,11 @@ const Estimate = () => {
   const [category, setCategory] = useState("");
   const [users, setUsers] = useState("");
 
+  const [alert, setAlert] = useState({ open: false, color: "" });
+  const [alertMessage, setAlertMesssage] = useState("");
+
+  const [loading, setLoading] = useState(false);
+
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -346,41 +448,53 @@ const Estimate = () => {
   };
 
   const nextQuestion = () => {
+    if (matchesXS) {
+      window.scrollTo(0, myRef.current.offsetTop + 75);
+    }
     const newQuestions = cloneDeep(questions);
-    const currentActive = newQuestions.filter(question => question.active);
-    const activeIndex = currentActive[0].id - 1;
+
+    const currentlyActive = newQuestions.filter(question => question.active);
+    const activeIndex = currentlyActive[0].id - 1;
     const nextIndex = activeIndex + 1;
 
-    newQuestions[activeIndex] = { ...currentActive[0], active: false };
+    newQuestions[activeIndex] = { ...currentlyActive[0], active: false };
     newQuestions[nextIndex] = { ...newQuestions[nextIndex], active: true };
 
     setQuestions(newQuestions);
   };
 
   const previousQuestion = () => {
+    if (matchesXS) {
+      window.scrollTo(0, myRef.current.offsetTop + 75);
+    }
     const newQuestions = cloneDeep(questions);
-    const currentActive = newQuestions.filter(question => question.active);
-    const activeIndex = currentActive[0].id - 1;
+
+    const currentlyActive = newQuestions.filter(question => question.active);
+    const activeIndex = currentlyActive[0].id - 1;
     const nextIndex = activeIndex - 1;
 
-    newQuestions[activeIndex] = { ...currentActive[0], active: false };
+    newQuestions[activeIndex] = { ...currentlyActive[0], active: false };
     newQuestions[nextIndex] = { ...newQuestions[nextIndex], active: true };
 
     setQuestions(newQuestions);
   };
 
-  const navigationPreviousDisabled = () => {
-    const currentActive = questions.filter(question => question.active);
-    if (currentActive[0].id === 1) {
+  const backButtonDisabled = () => {
+    const currentlyActive = questions.filter(question => question.active);
+    const activeId = currentlyActive[0].id;
+
+    if (activeId === 1) {
       return true;
     } else {
       return false;
     }
   };
 
-  const navigationNextDisabled = () => {
-    const currentActive = questions.filter(question => question.active);
-    if (currentActive[0].id === questions[questions.length - 1].id) {
+  const forwardButtonDisabled = () => {
+    const currentlyActive = questions.filter(question => question.active);
+    const activeId = currentlyActive[0].id;
+
+    if (activeId === questions[questions.length - 1].id) {
       return true;
     } else {
       return false;
@@ -389,15 +503,17 @@ const Estimate = () => {
 
   const handleSelect = id => {
     const newQuestions = cloneDeep(questions);
-    const currentActive = newQuestions.filter(question => question.active);
-    const activeIndex = currentActive[0].id - 1;
+
+    const currentlyActive = newQuestions.filter(question => question.active);
+    const activeIndex = currentlyActive[0].id - 1;
 
     const newSelected = newQuestions[activeIndex].options[id - 1];
-    const previousSelected = currentActive[0].options.filter(
+
+    const previousSelected = currentlyActive[0].options.filter(
       option => option.selected
     );
 
-    switch (currentActive[0].subtitle) {
+    switch (currentlyActive[0].subtitle) {
       case "Select one.":
         if (previousSelected[0]) {
           previousSelected[0].selected = !previousSelected[0].selected;
@@ -411,31 +527,40 @@ const Estimate = () => {
 
     switch (newSelected.title) {
       case "Custom Software Development":
+        if (matchesXS) {
+          window.scrollTo(0, myRef.current.offsetTop + 75);
+        }
         setQuestions(softwareQuestions);
         setService(newSelected.title);
         setPlatforms([]);
         setFeatures([]);
         setCustomFeatures("");
-        setCategory("");
         setUsers("");
+        setCategory("");
         break;
-      case "Android/iOS App Development":
+      case "iOS/Android App Development":
+        if (matchesXS) {
+          window.scrollTo(0, myRef.current.offsetTop + 75);
+        }
         setQuestions(softwareQuestions);
         setService(newSelected.title);
         setPlatforms([]);
         setFeatures([]);
         setCustomFeatures("");
-        setCategory("");
         setUsers("");
+        setCategory("");
         break;
-      case "Website & Web App's Development":
+      case "Website Development":
+        if (matchesXS) {
+          window.scrollTo(0, myRef.current.offsetTop + 75);
+        }
         setQuestions(websiteQuestions);
         setService(newSelected.title);
         setPlatforms([]);
         setFeatures([]);
         setCustomFeatures("");
-        setCategory("");
         setUsers("");
+        setCategory("");
         break;
       default:
         setQuestions(newQuestions);
@@ -454,7 +579,7 @@ const Estimate = () => {
         );
 
         if (!valid) {
-          setEmailHelper("Invaild email");
+          setEmailHelper("Invalid email");
         } else {
           setEmailHelper("");
         }
@@ -466,7 +591,7 @@ const Estimate = () => {
         );
 
         if (!valid) {
-          setPhoneHelper("Invaild phone");
+          setPhoneHelper("Invalid phone");
         } else {
           setPhoneHelper("");
         }
@@ -477,6 +602,7 @@ const Estimate = () => {
   };
 
   const getTotal = () => {
+    ReactGA.event({ category: "Estimate", action: "Estimate Checked" });
     let cost = 0;
 
     const selections = questions
@@ -493,6 +619,7 @@ const Estimate = () => {
         )[0][0];
 
       setUsers(userCost.title);
+
       cost -= userCost.cost;
       cost *= userCost.cost;
     }
@@ -501,9 +628,9 @@ const Estimate = () => {
   };
 
   const getPlatforms = () => {
-    let newPlatforms = [];
-
     if (questions.length > 2) {
+      let newPlatforms = [];
+
       questions
         .filter(
           question =>
@@ -511,14 +638,15 @@ const Estimate = () => {
         )
         .map(question => question.options.filter(option => option.selected))[0]
         .map(option => newPlatforms.push(option.title));
+
       setPlatforms(newPlatforms);
     }
   };
 
   const getFeatures = () => {
-    let newFeatures = [];
-
     if (questions.length > 2) {
+      let newFeatures = [];
+
       questions
         .filter(
           question => question.title === "Which features do you expect to use?"
@@ -527,6 +655,7 @@ const Estimate = () => {
         .map(option =>
           option.map(newFeature => newFeatures.push(newFeature.title))
         );
+
       setFeatures(newFeatures);
     }
   };
@@ -564,51 +693,71 @@ const Estimate = () => {
     let disabled = true;
 
     const emptySelections = questions
+      .filter(
+        question => question.title !== "Which features do you expect to use?"
+      )
       .map(question => question.options.filter(option => option.selected))
       .filter(question => question.length === 0);
 
+    const featureSelected = questions
+      .filter(
+        question => question.title === "Which features do you expect to use?"
+      )
+      .map(question => question.options.filter(option => option.selected))
+      .filter(selections => selections.length > 0);
+
     if (questions.length === 2) {
       if (emptySelections.length === 1) {
-        disabled = false;
+        return false;
       }
     } else if (questions.length === 1) {
-      disabled = true;
-    } else if (
-      emptySelections.length < 3 &&
-      questions[questions.length - 1].options.filter(option => option.selected)
-        .length > 0
-    ) {
+      return true;
+    } else if (emptySelections.length === 1 && featureSelected.length > 0) {
       disabled = false;
     }
 
     return disabled;
   };
 
-  const softwareSelection = (
+  const sendEstimate = () => {
+    setLoading(true);
+    ReactGA.event({ category: "Estimate", action: "Estimate Sent" });
+
+    axios
+      .get(
+        "https://us-central1-arc-development-website.cloudfunctions.net/sendMail",
+        {
+          params: {
+            email: email,
+            name: name,
+            phone: phone,
+            message: message,
+            total: total,
+            category: category,
+            service: service,
+            platforms: platforms,
+            features: features,
+            customFeatures: customFeatures,
+            users: users,
+          },
+        }
+      )
+      .then(res => {
+        setLoading(false);
+        setAlert({ open: true, color: "#4BB543" });
+        setAlertMesssage("Message sent successfully!");
+        setDialogOpen(false);
+      })
+      .catch(err => {
+        setLoading(false);
+        setAlert({ open: true, color: "#FF3232" });
+        setAlertMesssage("Something went wrong! Please try again.");
+        console.error(err);
+      });
+  };
+
+  const softwareSelections = (
     <Grid container direction="column">
-      <Head>
-        <title key="title">Free Custom Software Estimate | NativeCodeLab</title>
-        <meta
-          name="description"
-          key="description"
-          content="Use our free online estimate calculator to instantly check the cost of your custom software, mobile app, or website design and development project!"
-        />
-        <meta
-          property="og:title"
-          content="Bringing West Coast Technology to the Midwest | Free Estimate"
-          key="og:title"
-        />
-        <meta
-          property="og:url"
-          key="og:url"
-          content="nativecodelab.netlify.app/estimate"
-        />
-        <link
-          rel="canonical"
-          key="canonical"
-          href="nativecodelab.netlify.app/estimate"
-        />
-      </Head>
       <Grid
         item
         container
@@ -616,13 +765,13 @@ const Estimate = () => {
         style={{ marginBottom: "1.25em" }}
       >
         <Grid item xs={2}>
-          <img src="/assets/check.svg" alt="checkMark" />
+          <img src={check} alt="checkmark" />
         </Grid>
         <Grid item xs={10}>
-          <Typography variant="body2">
-            You want {service}
+          <Typography variant="body1">
+            {`You want ${service} `}
             {platforms.length > 0
-              ? ` for ${
+              ? `for ${
                   //if only web application is selected...
                   platforms.indexOf("Web Application") > -1 &&
                   platforms.length === 1
@@ -658,10 +807,10 @@ const Estimate = () => {
         style={{ marginBottom: "1.25em" }}
       >
         <Grid item xs={2}>
-          <img src="/assets/check.svg" alt="checkMark" />
+          <img src={check} alt="checkmark" />
         </Grid>
         <Grid item xs={10}>
-          <Typography variant="body2">
+          <Typography variant="body1">
             {"with "}
             {/* if we have features... */}
             {features.length > 0
@@ -682,7 +831,9 @@ const Estimate = () => {
                       <span key={index}>{`${feature}, `}</span>
                     ))
               : null}
-            {features.length > 2
+            {features.length > 0 &&
+            features.length !== 1 &&
+            features.length !== 2
               ? //...and then finally add the last feature with 'and' in front of it
                 ` and ${features[features.length - 1]}.`
               : null}
@@ -691,27 +842,26 @@ const Estimate = () => {
       </Grid>
       <Grid item container alignItems="center">
         <Grid item xs={2}>
-          <img src="/assets/check.svg" alt="checkMark" />
+          <img src={check} alt="checkmark" />
         </Grid>
         <Grid item xs={10}>
-          <Typography variant="body2">
-            The custom features will be of {customFeatures.toLowerCase()}
-            {`, and the projects will be used by about ${users} users.`}
+          <Typography variant="body1">
+            {`The custom features will be of ${customFeatures.toLowerCase()}, and the project will be used by about ${users} users.`}
           </Typography>
         </Grid>
       </Grid>
     </Grid>
   );
 
-  const websiteSelection = (
+  const websiteSelections = (
     <Grid container direction="column" style={{ marginTop: "14em" }}>
       <Grid item container alignItems="center">
         <Grid item xs={2}>
-          <img src="/assets/check.svg" alt="checkMark" />
+          <img src={check} alt="checkmark" />
         </Grid>
         <Grid item xs={10}>
-          <Typography variant="body2">
-            You want{" "}
+          <Typography variant="body1">
+            {`You want `}
             {category === "Basic"
               ? "a Basic Website."
               : `an ${category} Website.`}
@@ -723,6 +873,29 @@ const Estimate = () => {
 
   return (
     <Grid container direction="row">
+      <Head>
+        <title key="title">Free Custom Software Estimate | NativeCodeLab</title>
+        <meta
+          name="description"
+          key="description"
+          content="Use our free online estimate calculator to instantly check the cost of your custom software, mobile app, or website design and development project!"
+        />
+        <meta
+          property="og:title"
+          content="Bringing West Coast Technology to the Midwest | Free Estimate"
+          key="og:title"
+        />
+        <meta
+          property="og:url"
+          key="og:url"
+          content="nativecodelab.netlify.app/estimate"
+        />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="nativecodelab.netlify.app/estimate"
+        />
+      </Head>
       <Grid
         item
         container
@@ -762,7 +935,7 @@ const Estimate = () => {
           .filter(question => question.active)
           .map((question, index) => (
             <React.Fragment key={index}>
-              <Grid item>
+              <Grid item ref={myRef}>
                 <Typography
                   variant="h1"
                   align="center"
@@ -789,11 +962,9 @@ const Estimate = () => {
               <Grid item container>
                 {question.options.map((option, index) => (
                   <Grid
+                    key={index}
                     item
                     container
-                    direction="column"
-                    md
-                    key={index}
                     component={Button}
                     onClick={() => handleSelect(option.id)}
                     style={{
@@ -803,18 +974,24 @@ const Estimate = () => {
                       marginBottom: matchesSM ? "1.5em" : 0,
                       backgroundColor: option.selected
                         ? theme.palette.common.orange
-                        : null,
+                        : undefined,
                     }}
+                    direction="column"
+                    alignItems="center"
+                    md
                   >
                     <Grid item style={{ maxWidth: "14em" }}>
                       <Typography
-                        variant="h6"
                         align="center"
-                        style={{ marginBottom: "1em" }}
+                        variant="h6"
+                        style={{
+                          lineHeight: 1,
+                          marginBottom: "1em",
+                        }}
                       >
                         {option.title}
                       </Typography>
-                      <Typography variant="caption" align="center">
+                      <Typography align="center" variant="caption">
                         {option.subtitle}
                       </Typography>
                     </Grid>
@@ -839,31 +1016,25 @@ const Estimate = () => {
         >
           <Grid item>
             <IconButton
-              disabled={navigationPreviousDisabled()}
+              disabled={backButtonDisabled()}
               onClick={previousQuestion}
             >
               <img
-                src={
-                  navigationPreviousDisabled()
-                    ? "/assets/backArrowDisabled.svg"
-                    : "/assets/backArrow"
-                }
-                alt="Previous Question"
+                src={backButtonDisabled() ? backArrowDisabled : backArrow}
+                alt="Previous question"
               />
             </IconButton>
           </Grid>
           <Grid item>
             <IconButton
-              disabled={navigationNextDisabled()}
+              disabled={forwardButtonDisabled()}
               onClick={nextQuestion}
             >
               <img
                 src={
-                  navigationNextDisabled()
-                    ? "/assets/forwardArrowDisabled.svg"
-                    : "/assets/forwardArrow"
+                  forwardButtonDisabled() ? forwardArrowDisabled : forwardArrow
                 }
-                alt="Next Question"
+                alt="Next question"
               />
             </IconButton>
           </Grid>
@@ -887,15 +1058,15 @@ const Estimate = () => {
         </Grid>
       </Grid>
       <Dialog
-        style={{ zIndex: 1302 }}
         open={dialogOpen}
         onClose={() => setDialogOpen(false)}
         fullWidth
         maxWidth="lg"
+        style={{ zIndex: 1302 }}
         fullScreen={matchesSM}
       >
         <Grid container justifyContent="center">
-          <Grid item style={{ marginTop: " 1em", marginBottom: "1em" }}>
+          <Grid item style={{ marginTop: "1em" }}>
             <Typography variant="h1" align="center">
               Estimate
             </Typography>
@@ -991,16 +1162,18 @@ const Estimate = () => {
               style={{ maxWidth: "30em" }}
             >
               <Hidden smDown>
-                {" "}
                 <Grid item>
-                  {questions.length > 2 ? softwareSelection : websiteSelection}
+                  {questions.length > 2
+                    ? softwareSelections
+                    : websiteSelections}
                 </Grid>
               </Hidden>
 
               <Grid item>
                 <Button
                   variant="contained"
-                  className={classes.estimateButon}
+                  className={classes.estimateButton}
+                  onClick={sendEstimate}
                   disabled={
                     name.length === 0 ||
                     message.length === 0 ||
@@ -1010,16 +1183,22 @@ const Estimate = () => {
                     phone.length === 0
                   }
                 >
-                  Place Request
-                  <img
-                    src="/assets/send.svg"
-                    alt="paper Airplan"
-                    style={{ marginLeft: "0.5em" }}
-                  />
+                  {loading ? (
+                    <CircularProgress />
+                  ) : (
+                    <React.Fragment>
+                      Place Request
+                      <img
+                        src={send}
+                        alt="paper airplane"
+                        style={{ marginLeft: "0.5em" }}
+                      />
+                    </React.Fragment>
+                  )}
                 </Button>
               </Grid>
+
               <Hidden mdUp>
-                {" "}
                 <Grid item style={{ marginBottom: matchesSM ? "5em" : 0 }}>
                   <Button
                     style={{ fontWeight: 300 }}
@@ -1034,6 +1213,18 @@ const Estimate = () => {
           </Grid>
         </DialogContent>
       </Dialog>
+      <Snackbar
+        open={alert.open}
+        ContentProps={{
+          style: {
+            backgroundColor: alert.color,
+          },
+        }}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        message={alertMessage}
+        autoHideDuration={4000}
+        onClose={() => setAlert(false)}
+      />
     </Grid>
   );
 };
