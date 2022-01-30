@@ -25,9 +25,12 @@ import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import Grow from "@material-ui/core/Grow";
 import Paper from "@material-ui/core/Paper";
 import Popper from "@material-ui/core/Popper";
-import ExpansionPanel from "@material-ui/core/ExpansionPanel";
-import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
-import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import {
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+} from "@material-ui/core";
+
 import Grid from "@material-ui/core/Grid";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
@@ -397,12 +400,12 @@ const Header = props => {
                     <List disablePadding>
                       {routes.map(route =>
                         route.name === "Services" ? (
-                          <ExpansionPanel
+                          <Accordion
                             elevation={0}
                             classes={{ root: classes.expansion }}
                             key={route.name}
                           >
-                            <ExpansionPanelSummary
+                            <AccordionSummary
                               classes={{ root: classes.expansionSummary }}
                               expandIcon={<ExpandMoreIcon color="secondary" />}
                             >
@@ -421,8 +424,8 @@ const Header = props => {
                                   {route.name}
                                 </Link>
                               </ListItemText>
-                            </ExpansionPanelSummary>
-                            <ExpansionPanelDetails
+                            </AccordionSummary>
+                            <AccordionDetails
                               classes={{ root: classes.expansionDetails }}
                             >
                               <Grid container direction="column">
@@ -475,8 +478,8 @@ const Header = props => {
                                   </Grid>
                                 ))}
                               </Grid>
-                            </ExpansionPanelDetails>
-                          </ExpansionPanel>
+                            </AccordionDetails>
+                          </Accordion>
                         ) : (
                           <ListItem
                             divider
