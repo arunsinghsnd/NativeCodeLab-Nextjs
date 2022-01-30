@@ -1,7 +1,7 @@
 import React from "react";
 import Document, { Head, Main, NextScript } from "next/document";
 import { ServerStyleSheets } from "@material-ui/core/styles";
-import Theme from "../src/ui/Theme";
+import theme from "../src/ui/Theme";
 
 export default class MyDocument extends Document {
   render() {
@@ -9,20 +9,19 @@ export default class MyDocument extends Document {
       <html lang="en">
         <Head>
           <meta charSet="utf-8" />
-          <link rel="shortcut icon" href="/favicon.png" />
+          <link rel="shortcut icon" href="favicon.png" />
           <meta
             name="viewport"
             content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
           />
           {/* PWA primary color */}
-          <meta name="theme-color" content={Theme.palette.primary.main} />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Pacifico|Raleway:100,400,400i,700|Roboto:300,400,500,700&display=swap"
+          <meta name="theme-color" content={theme.palette.primary.main} />
+          <meta
+            property="og:title"
+            content="Bringing West Coast Technology to the Midwest"
           />
-          <meta name="theme-color" content={Theme.palette.primary.main} />
           <meta property="og:type" content="website" />
-          <meta property="og:image" content="https://imgur.com/a/cDzTltD" />
+          <meta property="og:image" content="https://i.imgur.com/C8evBTM.png" />
           <meta property="og:image:type" content="image/png" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />

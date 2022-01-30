@@ -22,9 +22,6 @@ const useStyles = makeStyles(theme => ({
     lineHeight: 1.4,
     maxWidth: "50em",
   },
-  arrowContainer: {
-    marginTop: "0.5em",
-  },
   rowContainer: {
     paddingLeft: "5em",
     paddingRight: "5em",
@@ -32,9 +29,10 @@ const useStyles = makeStyles(theme => ({
       paddingLeft: "1.5em",
       paddingRight: "1.5em",
     },
-  },
-  itemContainer: {
-    maxWidth: "34em",
+    [theme.breakpoints.down("xs")]: {
+      paddingLeft: "1em",
+      paddingRight: "1em",
+    },
   },
   avatar: {
     height: "25em",
@@ -185,7 +183,7 @@ const About = props => {
         <Grid item>
           <Grid item container justifyContent="center" lg>
             <img
-              src="/assets/history.svg"
+              src="static/assets/history.svg"
               alt="quill pen sitting on top of book"
               style={{ maxHeight: matchesMD ? 200 : "22em" }}
             />
@@ -216,7 +214,7 @@ const About = props => {
         <Grid item>
           <Avatar
             alt="founder"
-            src="/assets/founderPic.jpg"
+            src="static/assets/founderPic.jpg"
             className={classes.avatar}
           />
         </Grid>
@@ -245,7 +243,7 @@ const About = props => {
           >
             <Grid item>
               <img
-                src="/assets/yearbook.svg"
+                src="static/assets/yearbook.svg"
                 alt="year book page about founder"
                 style={{ maxWidth: matchesMD ? 300 : undefined }}
               />
@@ -279,7 +277,7 @@ const About = props => {
           >
             <Grid item>
               <img
-                src="/assets/puppy.svg"
+                src="static/assets/puppy.svg"
                 style={{ maxWidth: matchesMD ? 300 : undefined }}
                 alt="grey spotted puppy"
               />

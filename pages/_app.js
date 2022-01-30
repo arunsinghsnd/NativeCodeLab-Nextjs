@@ -1,15 +1,19 @@
 import React from "react";
 import App from "next/app";
-import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";
-import Theme from "../src/ui/Theme";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
+
+import theme from "../src/ui/Theme";
 import Header from "../src/ui/Header";
 import Footer from "../src/ui/Footer";
+import Fonts from "../src/ui/Fonts";
+
+import ReactGA from "react-ga";
+ReactGA.initialize("UA-145847500-1");
 
 export default class MyApp extends App {
   constructor(props) {
     super(props);
-
     this.state = { value: 0, selectedIndex: 0 };
   }
 
@@ -22,6 +26,15 @@ export default class MyApp extends App {
   };
 
   componentDidMount() {
+    Fonts();
+    // Check that service workers are supported
+    if ("serviceWorker" in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/service-worker.js");
+      });
+    }
+
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector("#jss-server-side");
     if (jssStyles) {
@@ -34,10 +47,7 @@ export default class MyApp extends App {
 
     return (
       <React.Fragment>
-        <Head>
-          <title>My page</title>
-        </Head>
-        <ThemeProvider theme={Theme}>
+        <ThemeProvider theme={theme}>
           <Header
             value={this.state.value}
             setValue={this.setValue}
@@ -46,13 +56,15 @@ export default class MyApp extends App {
           />
           <Component
             {...pageProps}
-            setSelectedIndex={this.setSelectedIndex}
             setValue={this.setValue}
-          />
-          <Footer
             setSelectedIndex={this.setSelectedIndex}
-            setValue={this.setValue}
           />
+          <LazyLoadComponent>
+            <Footer
+              setValue={this.setValue}
+              setSelectedIndex={this.setSelectedIndex}
+            />
+          </LazyLoadComponent>
         </ThemeProvider>
       </React.Fragment>
     );

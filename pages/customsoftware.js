@@ -14,10 +14,11 @@ import {
 
 import Lottie from "react-lottie";
 
-import documentsAnimation from "../src/animations/documentsAnimation/data";
+// import documentsAnimation from "../src/animations/scaleAnimation/data.json";
 import scaleAnimation from "../src/animations/scaleAnimation/data.json";
 import automationAnimation from "../src/animations/automationAnimation/data.json";
-import uxAnimation from "../src/animations/uxAnimation/data";
+// import uxAnimation from "../src/animations/uxAnimation/data";
+import animationData from "../src/animations/landinganimation/data.json";
 import CallToAction from "../src/ui/CallToAction";
 import Link from "../src/Link";
 
@@ -51,7 +52,7 @@ const CustomSoftware = props => {
   const documentsOptions = {
     loop: true,
     autoplay: false,
-    animationData: documentsAnimation,
+    animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -78,7 +79,7 @@ const CustomSoftware = props => {
   const uxOptions = {
     loop: true,
     autoplay: false,
-    animationData: uxAnimation,
+    animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -130,7 +131,7 @@ const CustomSoftware = props => {
               component={Link}
               href="/services"
               onClick={() => {
-                props.setSelectedIndex(1);
+                props.setSelectedIndex(0);
               }}
             >
               <img src="/assets/backArrow.svg" alt="Back to Services Page" />
