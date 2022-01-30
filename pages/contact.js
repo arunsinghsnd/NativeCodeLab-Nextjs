@@ -14,7 +14,8 @@ import {
   CircularProgress,
   Snackbar,
 } from "@material-ui/core";
-
+import axios from "axios";
+import ReactGA from "react-ga";
 import ButtonArrow from "../src/ui/ButtonArrow";
 import Link from "../src/ui/Link";
 import Head from "next/head";
