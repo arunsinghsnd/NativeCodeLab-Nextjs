@@ -236,7 +236,7 @@ const Revolution = props => {
           <Grid item>
             <Typography
               align={matchesMD ? "center" : "right"}
-              variant="body1"
+              variant="body2"
               paragraph
             >
               The rise of computers, and subsequently the Internet, has
@@ -246,7 +246,7 @@ const Revolution = props => {
             </Typography>
             <Typography
               align={matchesMD ? "center" : "right"}
-              variant="body1"
+              variant="body2"
               paragraph
             >
               What once was confined to huge rooms and teams of engineers now
@@ -256,7 +256,7 @@ const Revolution = props => {
             </Typography>
             <Typography
               align={matchesMD ? "center" : "right"}
-              variant="body1"
+              variant="body2"
               paragraph
             >
               We want to help businesses capitalize on the latest and greatest
@@ -266,7 +266,7 @@ const Revolution = props => {
             </Typography>
             <Typography
               align={matchesMD ? "center" : "right"}
-              variant="body1"
+              variant="body2"
               paragraph
             >
               By holding ourselves to rigorous standards and pristine quality,
@@ -275,7 +275,7 @@ const Revolution = props => {
             </Typography>
             <Typography
               align={matchesMD ? "center" : "right"}
-              variant="body1"
+              variant="body2"
               paragraph
             >
               We see a future where every individual has personalized software
@@ -307,7 +307,7 @@ const Revolution = props => {
           <Grid item>
             <Typography
               align={matchesMD ? "center" : undefined}
-              variant="body1"
+              variant="body2"
               paragraph
             >
               In 2013, Facebook invented a new way of building websites. This
@@ -316,7 +316,7 @@ const Revolution = props => {
             </Typography>
             <Typography
               align={matchesMD ? "center" : undefined}
-              variant="body1"
+              variant="body2"
               paragraph
             >
               Instead of chaining together long individual pages, like
@@ -327,7 +327,7 @@ const Revolution = props => {
             </Typography>
             <Typography
               align={matchesMD ? "center" : undefined}
-              variant="body1"
+              variant="body2"
               paragraph
             >
               Two years later they shocked the world by releasing a similar
@@ -338,7 +338,7 @@ const Revolution = props => {
             </Typography>
             <Typography
               align={matchesMD ? "center" : undefined}
-              variant="body1"
+              variant="body2"
               paragraph
             >
               This technology is now being used by companies like AirBnB,
@@ -348,7 +348,7 @@ const Revolution = props => {
             </Typography>
             <Typography
               align={matchesMD ? "center" : undefined}
-              variant="body1"
+              variant="body2"
               paragraph
             >
               Developers have since built on top of these systems by automating
@@ -357,7 +357,7 @@ const Revolution = props => {
             </Typography>
             <Typography
               align={matchesMD ? "center" : undefined}
-              variant="body1"
+              variant="body2"
               paragraph
             >
               These technical advancements translate into savings by
@@ -367,7 +367,7 @@ const Revolution = props => {
             </Typography>
             <Typography
               align={matchesMD ? "center" : undefined}
-              variant="body1"
+              variant="body2"
               paragraph
             >
               This puts personalization in your pocket — faster, better, and
@@ -432,7 +432,7 @@ const Revolution = props => {
                 <Typography
                   key={`${index}_b`}
                   align={matchesMD ? "center" : undefined}
-                  variant="body1"
+                  variant="body2"
                   style={{ color: "#fff", maxWidth: "20em" }}
                   paragraph
                 >
