@@ -260,7 +260,7 @@ const Header = props => {
             >
               <img
                 className={classes.logo}
-                src="/assets/logo/nativeCodeLabLogoWhite.png"
+                src="/static/assets/logo/nativeCodeLabLogoWhite.png"
                 alt="company logo"
               />
             </Button>

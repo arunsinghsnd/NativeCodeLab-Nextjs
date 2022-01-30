@@ -51,7 +51,6 @@ export default createTheme({
       fontFamily: "Ralewaye",
       fontWeight: 500,
       color: `${nclGreen}`,
-      lineHeight: 1,
     },
     subtitle1: {
       fontWeight: 300,
