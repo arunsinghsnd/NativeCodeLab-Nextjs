@@ -60,9 +60,9 @@ const useStyles = makeStyles(theme => ({
       marginBottom: "1.25em",
     },
   },
-
   logo: {
     height: "8em",
+    textTransform: "none",
     [theme.breakpoints.down("md")]: {
       height: "7em",
     },
@@ -89,6 +89,7 @@ const useStyles = makeStyles(theme => ({
     borderRadius: "50px",
     marginLeft: "50px",
     marginRight: "25px",
+    height: "45px",
     "&:hover": {
       backgroundColor: theme.palette.secondary.light,
     },
@@ -109,7 +110,7 @@ const useStyles = makeStyles(theme => ({
     height: "50px",
     width: "50px",
   },
-  drawerIconContianer: {
+  drawerIconContainer: {
     marginLeft: "auto",
     "&:hover": {
       backgroundColor: "transparent",
@@ -127,10 +128,35 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.common.orange,
   },
   drawerItemSelected: {
-    "& .MuiListItemText-root": { opacity: 1 },
+    "& .MuiListItemText-root": {
+      opacity: 1,
+    },
   },
   appbar: {
     zIndex: theme.zIndex.modal + 1,
+  },
+  expansion: {
+    borderBottom: "1px solid rgba(0, 0, 0, 0.12)",
+    backgroundColor: theme.palette.common.blue,
+    "&.Mui-expanded": {
+      margin: 0,
+      borderBottom: 0,
+    },
+    "&::before": {
+      backgroundColor: "rgba(0, 0, 0, 0)",
+    },
+  },
+  expansionDetails: {
+    padding: 0,
+    backgroundColor: theme.palette.primary.light,
+  },
+  expansionSummary: {
+    padding: "0 24px 0 16px",
+    "&:hover": {
+      backgroundColor: "rgba(0, 0, 0, 0.08)",
+    },
+    backgroundColor: props =>
+      props.value === 1 ? "rgba(0 , 0, 0, 0.14)" : "inherit",
   },
 }));
 
