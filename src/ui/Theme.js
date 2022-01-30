@@ -6,14 +6,14 @@ const nclGrey = "#868686";
 export default createTheme({
   palette: {
     common: {
-      blue: `${nclGreen}`,
-      orange: `${nclOrange}`,
+      blue: nclGreen,
+      orange: nclOrange,
     },
     primary: {
-      main: `${nclGreen}`,
+      main: nclGreen,
     },
     secondary: {
-      main: `${nclOrange}`,
+      main: nclOrange,
     },
   },
   typography: {
@@ -21,65 +21,66 @@ export default createTheme({
       fontFamily: "Raleway",
       textTransform: "none",
       fontWeight: 700,
+      color: "white",
       fontSize: "1rem",
     },
     estimate: {
       fontFamily: "Pacifico",
-      textTransform: "none",
       fontSize: "1rem",
+      textTransform: "none",
       color: "white",
     },
     h1: {
-      fontFamily: "Ralewaye",
+      fontFamily: "Raleway",
       fontWeight: 700,
       fontSize: "2.5rem",
-      color: `${nclGreen}`,
+      color: nclGreen,
       lineHeight: 1.5,
     },
     h3: {
       fontFamily: "Pacifico",
-      fontSize: "2.5em",
+      fontSize: "2.5rem",
       color: nclGreen,
     },
     h4: {
-      fontFamily: "Ralewaye",
-      fontWeight: 700,
+      fontFamily: "Raleway",
       fontSize: "1.75rem",
-      color: `${nclGreen}`,
+      color: nclGreen,
+      fontWeight: 700,
     },
     h6: {
-      fontFamily: "Ralewaye",
       fontWeight: 500,
-      color: `${nclGreen}`,
+      fontFamily: "Raleway",
+      color: nclGreen,
     },
     subtitle1: {
-      fontWeight: 300,
       fontSize: "1.25rem",
-      color: `${nclGrey}`,
+      fontWeight: 300,
+      color: nclGrey,
     },
     subtitle2: {
-      fontWeight: 300,
-      fontSize: "1.25rem",
       color: "white",
-    },
-    body2: {
       fontWeight: 300,
       fontSize: "1.25rem",
-      color: `${nclGrey}`,
+    },
+    body1: {
+      fontSize: "1.25rem",
+      color: nclGrey,
+      fontWeight: 300,
     },
     caption: {
       fontSize: "1rem",
-      fontWeight: 30,
+      fontWeight: 300,
       color: nclGrey,
     },
-    learnButtom: {
+    learnButton: {
       borderColor: nclGreen,
       borderWidth: 2,
       textTransform: "none",
       color: nclGreen,
       borderRadius: 50,
       fontFamily: "Roboto",
-      fontWeight: "blod",
+      fontWeight: "bold",
     },
   },
   overrides: {

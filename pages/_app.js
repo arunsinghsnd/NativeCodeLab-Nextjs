@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import App from "next/app";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { LazyLoadComponent } from "react-lazy-load-image-component";
-
 import theme from "../src/ui/Theme";
+
 import Header from "../src/ui/Header";
 import Footer from "../src/ui/Footer";
+
 import Fonts from "../src/ui/Fonts";
 
 import ReactGA from "react-ga";
