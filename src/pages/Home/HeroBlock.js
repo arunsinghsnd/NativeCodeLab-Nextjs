@@ -95,7 +95,12 @@ const HeroBlock = props => {
   return (
     <Grid item>
       {/*-----Hero Block-----*/}
-      <Grid container justify="flex-end" alignItems="center" direction="row">
+      <Grid
+        container
+        justifyContent="flex-end"
+        alignItems="center"
+        direction="row"
+      >
         <Grid sm item className={classes.heroTextContainer}>
           <Typography variant="h1" align="center">
             Bringing West Coast Technology
