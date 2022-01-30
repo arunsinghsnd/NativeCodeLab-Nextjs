@@ -11,6 +11,8 @@ import {
   TextField,
   Dialog,
   DialogContent,
+  CircularProgress,
+  Snackbar,
 } from "@material-ui/core";
 
 import ButtonArrow from "../src/ui/ButtonArrow";
@@ -19,20 +21,20 @@ import Head from "next/head";
 
 const useStyles = makeStyles(theme => ({
   background: {
-    backgroundImage: `url("/assets/background.jpg")`,
+    backgroundImage: `url("static/assets/background.jpg")`,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     height: "60em",
     paddingBottom: "10em",
     [theme.breakpoints.down("md")]: {
-      backgroundImage: `url("/assets/mobileBackground.jpg")`,
+      backgroundImage: `url("static/assets/mobileBackground.jpg")`,
     },
   },
   learnButton: {
     ...theme.typography.learnButtom,
-    fontSize: "0.9rem",
-    height: 45,
+    fontSize: "0.7rem",
+    height: 35,
     padding: 5,
     [theme.breakpoints.down("md")]: {
       marginBottom: "2em",
@@ -95,6 +97,7 @@ const Contact = props => {
   const [message, setMessage] = useState("");
 
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const onChange = event => {
     let valid;
@@ -128,6 +131,50 @@ const Contact = props => {
         break;
     }
   };
+
+  const onConfirm = () => {
+    setLoading(true);
+
+    axios
+      .get(
+        "https://us-central1-arc-development-website.cloudfunctions.net/sendMail",
+        {
+          params: {
+            email: email,
+            name: name,
+            phone: phone,
+            message: message,
+          },
+        }
+      )
+      .then(res => {
+        setLoading(false);
+        setOpen(false);
+        setName("");
+        setEmail("");
+        setPhone("");
+        setMessage("");
+        setAlert({ open: true, color: "#4BB543" });
+        setAlertMesssage("Message sent successfully!");
+      })
+      .catch(err => {
+        setLoading(false);
+        setAlert({ open: true, color: "#FF3232" });
+        setAlertMesssage("Something went wrong! Please try again.");
+        console.error(err);
+      });
+  };
+
+  const buttonContents = (
+    <React.Fragment>
+      Send Message
+      <img
+        src="static/assets/send.svg"
+        alt="paper airplane"
+        style={{ marginLeft: "1em" }}
+      />
+    </React.Fragment>
+  );
 
   return (
     <Grid container direction="row">
@@ -188,7 +235,7 @@ const Contact = props => {
             <Grid item container style={{ marginTop: "2em" }}>
               <Grid item>
                 <img
-                  src="/assets/phone.svg"
+                  src="static/assets/phone.svg"
                   alt="phone icon"
                   style={{ marginRight: "0.5em" }}
                 />
@@ -211,7 +258,7 @@ const Contact = props => {
             <Grid item container style={{ marginBottom: "2em" }}>
               <Grid item>
                 <img
-                  src="/assets/email.svg"
+                  src="static/assets/email.svg"
                   alt="envalop"
                   style={{ marginRight: "0.5em", verticalAlign: "bottom" }}
                 />
@@ -251,7 +298,7 @@ const Contact = props => {
                   onChange={onChange}
                 />
               </Grid>
-              <Grid item>
+              <Grid item style={{ marginBottom: "0.5em" }}>
                 <TextField
                   label="Phone"
                   error={phoneHelper.length !== 0}
@@ -295,12 +342,7 @@ const Contact = props => {
                 className={classes.sendButtom}
                 onClick={() => setOpen(true)}
               >
-                Send Message{" "}
-                <img
-                  src="/assets/send.svg"
-                  alt="paper airpalne"
-                  style={{ marginLeft: "1em" }}
-                />
+                {buttonContents}
               </Button>
             </Grid>
           </Grid>
@@ -319,14 +361,14 @@ const Contact = props => {
             paddingLeft: matchesXS
               ? 0
               : matchesSM
-              ? "5em"
+              ? 0
               : matchesMD
               ? "15em"
               : "25em",
             paddingRight: matchesXS
               ? 0
               : matchesSM
-              ? "5em"
+              ? 0
               : matchesMD
               ? "15em"
               : "25em",
@@ -414,19 +456,34 @@ const Contact = props => {
                   phone.length === 0
                 }
                 className={classes.sendButtom}
-                onClick={() => setOpen(true)}
+                // onClick={() => setOpen(true)}
+                onClick={() => {
+                  onConfirm();
+                  ReactGA.event({
+                    category: "Message",
+                    action: "Message Sent",
+                  });
+                }}
               >
-                Send Message{" "}
-                <img
-                  src="/assets/send.svg"
-                  alt="paper airpalne"
-                  style={{ marginLeft: "1em" }}
-                />
+                {loading ? <CircularProgress size={30} /> : buttonContents}
               </Button>
             </Grid>
           </Grid>
         </DialogContent>
       </Dialog>
+
+      <Snackbar
+        open={alert.open}
+        ContentProps={{
+          style: {
+            backgroundColor: alert.color,
+          },
+        }}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        message={alertMessage}
+        autoHideDuration={4000}
+        onClose={() => setAlert(false)}
+      />
 
       <Grid
         item
@@ -487,7 +544,14 @@ const Contact = props => {
             className={classes.estimateButton}
             component={Link}
             href="/estimate"
-            onClick={() => props.setValue(5)}
+            // onClick={() => props.setValue(5)}
+            onClick={() => {
+              props.setValue(5);
+              ReactGA.event({
+                category: "Estimate",
+                action: "Contact Page Pressed",
+              });
+            }}
           >
             Free Estimate
           </Button>
