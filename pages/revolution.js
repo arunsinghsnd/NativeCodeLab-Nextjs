@@ -173,7 +173,7 @@ const Revolution = props => {
     <Grid container direction="column">
       <Head>
         <title key="title">
-          The Revolution - Cutting-Edge Software | Arc Development
+          The Revolution - Cutting-Edge Software | NativeCodeLab
         </title>
         <meta
           name="description"
@@ -183,10 +183,10 @@ const Revolution = props => {
         <meta
           property="og:url"
           key="og:url"
-          content="https://arcsoftwaredevelopment.com/revolution"
+          content="nativecodelab.netlify.app/revolution"
         />
         <link
-          href="https://arcsoftwaredevelopment.com/revolution"
+          href="nativecodelab.netlify.app/revolution"
           rel="canonical"
           key="canonical"
         />
