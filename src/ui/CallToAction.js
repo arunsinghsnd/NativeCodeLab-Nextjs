@@ -8,7 +8,7 @@ import {
   useMediaQuery,
 } from "@material-ui/core";
 import ButtonArrow from "./ButtonArrow";
-import Link from "../Link";
+import Link from "./Link";
 
 const useStyles = makeStyles(theme => ({
   learnButton: {

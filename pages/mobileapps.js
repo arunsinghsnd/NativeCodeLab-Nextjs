@@ -16,7 +16,13 @@ import Lottie from "react-lottie";
 
 import integrationAnimation from "../src/animations/integrationAnimation/data.json";
 import CallToAction from "../src/ui/CallToAction";
-import Link from "../src/Link";
+import Link from "../src/ui/Link";
+
+const forwardArrow = "static/assets/forwardArrow.svg";
+const backArrow = "static/assets/backArrow.svg";
+const swiss = "static/assets/swissKnife.svg";
+const access = "static/assets/extendAccess.svg";
+const engagement = "static/assets/increaseEngagement.svg";
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -32,9 +38,6 @@ const useStyles = makeStyles(theme => ({
       paddingLeft: "1.5em",
       paddingRight: "1.5em",
     },
-  },
-  itemContainer: {
-    maxWidth: "34em",
   },
 }));
 
@@ -102,17 +105,22 @@ const MobileApps = props => {
                 props.setSelectedIndex(1);
               }}
             >
-              <img
-                src="/assets/backArrow.svg"
-                alt="Back to Custom software Developemnt "
-              />
+              <img src={backArrow} alt="Back to Custom software Developemnt " />
             </IconButton>
           </Grid>
         </Hidden>
 
         <Grid item container direction="column" className={classes.heading}>
           <Grid item>
-            <Typography align={matchesMD ? "center" : undefined} variant="h1">
+            <Typography
+              gutterBottom={matchesXS}
+              style={{
+                lineHeight: matchesXS ? 1.2 : undefined,
+                fontSize: matchesXS ? "2.25em" : undefined,
+              }}
+              align={matchesMD ? "center" : undefined}
+              variant="h1"
+            >
               Android/iOS App Developemnt
             </Typography>
           </Grid>
@@ -155,7 +163,7 @@ const MobileApps = props => {
               }}
             >
               <img
-                src="/assets/forwardArrow.svg"
+                src={forwardArrow}
                 alt="Forwared Web Site  developemnt  page"
               />
             </IconButton>
@@ -199,14 +207,8 @@ const MobileApps = props => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item md>
-          <Lottie
-            options={defaultOptions}
-            style={{
-              maxWidth: matchesMD ? "15em" : "20em",
-              height: matchesMD ? "20em" : undefined,
-            }}
-          />
+        <Grid item md style={{ marginBottom: matchesSM ? "1em" : null }}>
+          <Lottie options={defaultOptions} style={{ maxWidth: "20em" }} />
         </Grid>
         <Grid item container direction="column" md>
           <Grid item>
@@ -241,12 +243,9 @@ const MobileApps = props => {
       <Grid
         item
         container
-        direction="row"
+        direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
-        style={{
-          marginBottom: "15em",
-          display: matchesMD ? "grid" : undefined,
-        }}
+        style={{ marginBottom: "15em" }}
       >
         {" "}
         <Grid item container direction="column" alignItems="center" md>
@@ -257,7 +256,7 @@ const MobileApps = props => {
             </Typography>
           </Grid>
           <Grid item>
-            <img src="/assets/swissKnife.svg" alt="swiss army knife" />
+            <img src={swiss} alt="swiss army knife" />
           </Grid>
         </Grid>
         <Grid
@@ -279,7 +278,7 @@ const MobileApps = props => {
           </Grid>
           <Grid item>
             <img
-              src="/assets/extendAccess.svg"
+              src={access}
               alt="tear-one-off sign"
               style={{ maxWidth: matchesXS ? "20em" : "28em" }}
             />
@@ -293,10 +292,7 @@ const MobileApps = props => {
             </Typography>
           </Grid>
           <Grid item>
-            <img
-              src="/assets/increaseEngagement.svg"
-              alt="app with notification"
-            />
+            <img src={engagement} alt="app with notification" />
           </Grid>
         </Grid>
       </Grid>
