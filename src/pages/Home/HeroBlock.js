@@ -57,7 +57,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function HeroBlock(props) {
+const HeroBlock = props => {
   const classes = useStyles();
   const theme = useTheme();
   const [hydrated, setHydrated] = useState(false);
@@ -159,4 +159,6 @@ export default function HeroBlock(props) {
       </Grid>
     </Grid>
   );
-}
+};
+
+export default HeroBlock;
